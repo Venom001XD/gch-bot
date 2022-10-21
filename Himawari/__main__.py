@@ -716,7 +716,7 @@ def main():
     dispatcher.add_error_handler(error_callback)
 
     if WEBHOOK:
-        URL="https://meow.herokuapp.com" #dont change or do if u r on heroku
+        URL="https://newaplldks.herokuapp.com" #dont change or do if u r on heroku
         LOGGER.info("Using webhooks.")
         updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)
 

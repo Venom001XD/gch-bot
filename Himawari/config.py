@@ -18,10 +18,10 @@ class Config(object):
     TEMP_DOWNLOAD_DIRECTORY="./"
     DEL_CMDS=False
     BAN_STICKER="kans" 
-    CERT_PATH="True"
+    CERT_PATH=""
     PORT=8443
     WORKERS=8
-    LOAD="True"
+    LOAD=""
     NO_LOAD="translation"
     MONGO_DB="Himawari"
     WEBHOOK=False

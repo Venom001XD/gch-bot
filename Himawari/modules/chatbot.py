@@ -162,7 +162,7 @@ Chatbot utilizes the Kuki's API which allows Himawari to talk and provide a more
 *Powered by ItelAi*
 """
 
-__mod_name__ = "ChatBot"
+__mod_name__ = "𝙲ʜᴀᴛʙᴏᴛ"
 
 
 CHATBOTK_HANDLER = CommandHandler("chatbot", kuki, run_async=True)

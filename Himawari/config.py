@@ -1,4 +1,4 @@
-"""
+ """
 MIT License
 
 Copyright (c) 2022 Arsh
@@ -53,17 +53,17 @@ class Config(object):
     #you can change these 
     INFOPIC=True #picture while doing /info
     STRICT_GBAN=True
-    API_ID=681 ##api id from my.telegram.org
-    APP_ID=6281 #same as API_ID
-    API_HASH="45aabfacadsdsds" ##api hash from my.telegram.org
-    APP_HASH="45aabfadsdsd" #same as API_HASH
+    API_ID=16228540 ##api id from my.telegram.org
+    APP_ID=16228540 #same as API_ID
+    API_HASH="57a8fac91b598c8c2e7fdde3c8407020" ##api hash from my.telegram.org
+    APP_HASH="57a8fac91b598c8c2e7fdde3c8407020" #same as API_HASH
     BL_CHATS=[1] #chats to be blacklisted
-    MONGO_DB_URL="mongodb+srv://mesdsdwhidsdsgodb.net/?retryWrites=true&w=majority" ##mongo database link (necessary)
+    MONGO_DB_URL="mongodb+srv://ssid143:liyaxlambert*143@cluster0.pdabrye.mongodb.net/?retryWrites=true&w=majority" ##mongo database link (necessary)
     DB_URL2="mongodb+srv://meowhisswswuj7.mongodb.net/?retryWrites=true&w=majority" #mongo db (not necessary)
-    DB_URL="postgresql://wdsdsw@ldsas/wasassddb" #postgres sql database link
-    REDIS_URL="redis://dsds3@reddsdsuth-1-1.ec2.cloud.redislabs.com:154dsd/Arssddsdsb" #redis database url from redislabs.com
-    TOKEN="54dssdV8e59Odo" #bot token from @BotFather
-    DEV_USERS=[5306064258] #developers id
+    DB_URL="postgres://rhluyfah:qvng2ftoA5MHivaSx7TFp2OUJXInC7B5@lucky.db.elephantsql.com/rhluyfah" #postgres sql database link
+    REDIS_URL="redis://default:P7VUOV6JhzsFh2w4nkt8@containers-us-west-91.railway.app:6563" #redis database url from redislabs.com
+    TOKEN="5799456774:AAHsVSLOSTt7M2mqRS3AKjfIJuvuSbpgaSo" #bot token from @BotFather
+    DEV_USERS=[5556308886] #developers id
     DRAGONS=[9656] #sudo users id
     DEMONS=[1909] #support user ids
     TIGERS=[1] #commas for multiple ids
@@ -71,7 +71,7 @@ class Config(object):
     DONATION_LINK="https://www.paypal.me/PaulSonOfLars" #u can change with yours
     EVENT_LOGS=-100159 #channel id for gban logs
     JOIN_LOGGER=-1001523  #log channel/group id
-    OWNER_ID=5306064258 #owner id in integer
+    OWNER_ID=5556308886 #owner id in integer
     ERROR_LOGS=-1001 #support group id
     BOT_NAME="Himawari" #your bot name
     ARQ_API_KEY="SLSFXSsdUXNSMH-ARQ" #ARQ api key from @ARQRobot

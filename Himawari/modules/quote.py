@@ -400,4 +400,4 @@ async def quott_(event):
     message = await reply.reply("", file=file)
     os.remove(file)
     await msg.delete()
-    return message`
+    return message

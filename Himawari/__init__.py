@@ -220,9 +220,9 @@ else:
     APP_HASH = Config.APP_HASH
     BOT_ID = Config.BOT_ID
     BOT_USERNAME = Config.BOT_USERNAME
-    BOT_NAME = Config.BOT_NAME
-    ALLOW_EXCL = Config.ALLOW_EXCL
-    DEL_CMDS = Config.DEL_CMDS
+    BOT_NAME = 5556308886
+    ALLOW_EXCL = True
+    DEL_CMDS = True
    # GENIUS_API_TOKEN = Config.GENIUS_API_TOKEN
     # YOUTUBE_API_KEY = Config.YOUTUBE_API_KEY
 

@@ -7,4 +7,4 @@ Usage:
 /antiservice [on|off]
 """
 
-__mod_name__ = "𝙰ɴᴛɪsᴇʀᴠɪᴄᴇ"
+__mod_name__ = "𝙰ɴᴛɪ-sᴇʀᴠɪᴄᴇ"

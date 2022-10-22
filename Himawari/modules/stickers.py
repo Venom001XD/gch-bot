@@ -917,7 +917,7 @@ __help__ = """
 • /getvideo*:* reply to a gif to get video easily !
 
 """
-__mod_name__ = "Stickers" 
+__mod_name__ = "𝚂ᴛɪᴄᴋᴇʀs" 
 
 STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid, run_async=True)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker, run_async=True)

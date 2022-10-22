@@ -436,18 +436,17 @@ def himawari_callback_data(update, context):
         )
     elif query.data == "himawari_back":
         first_name = update.effective_user.first_name
-        query.message.edit_text(
-                PM_START_TEXT.format(
-                    escape_markdown(context.bot.first_name),
-                    escape_markdown(first_name),
+            update.effective_message.reply_text(
+                PM_START_TEXT.format(random.choice(PHOTO),escape_markdown(first_name),
                     escape_markdown(uptime),
                     sql.num_users(),
-                    sql.num_chats()),
+                    sql.num_chats()),                        
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
                 disable_web_page_preview=False,
-        )
+            )
+
 
 
 @typing_action

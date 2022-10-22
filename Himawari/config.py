@@ -45,7 +45,7 @@ class Config(object):
     DEMONS=[1909] #support user ids
     TIGERS=[1] #commas for multiple ids
     WOLVES=[2112, 1212] #commas for multiple ids 
-    DONATION_LINK="https://www.paypal.me/PaulSonOfLars" #u can change with yours
+    DONATION_LINK="https://t.me/PowerSupportGroup" #u can change with yours
     EVENT_LOGS=-100159 #channel id for gban logs
     JOIN_LOGGER=-1001523  #log channel/group id
     OWNER_ID=1937701729 #owner id in integer

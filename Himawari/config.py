@@ -53,15 +53,15 @@ class Config(object):
     BOT_NAME="Himawari" #your bot name
     ARQ_API_KEY="SLSFXSsdUXNSMH-ARQ" #ARQ api key from @ARQRobot
     ARQ_API_URL="arq.hamker.dev" #arq link
-    SUPPORT_CHAT="dabi_music_logs" #support group username without @
+    SUPPORT_CHAT="PowerSupportGroup" #support group username without @
     OWNER_USERNAME="SIXTH_H0KAGE" #owner username without @
-    UPDATES_CHANNEL="Igsd" #Updates/News Channel username without @
-    BOT_USERNAME="Himawari_Robot" #bot username without @
+    UPDATES_CHANNEL="PowerBotUpdates" #Updates/News Channel username without @
+    BOT_USERNAME="PowerUltraXBot" #bot username without @
     REM_BG_API_KEY="K2dsdsYma6cZx" #not necessary
     GENIUS_API_TOKEN="e-8UdRQNrIssPyM" # api token from genius.com (not necessary)
     TIME_API_KEY="QLLLDV7SWFD3" #not necessary
     SPAMWATCH_API="J968E_20LgxrKjsdN24cqYtD~gNRTbU" #spamwatch api token from @SpamWatchBot
-    WALL_API="6950f5ds6a3" #wall api (not necessary)
+    WALL_API="2455acab48f3a935a8e703e54e26d121" #wall api (not necessary)
     BOT_ID = 1937701729
 
 

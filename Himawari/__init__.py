@@ -153,16 +153,16 @@ if ENV:
 else:
     from Himawari.config import Development as Config
 
-    TOKEN = Config.TOKEN
+    TOKEN = "5762682495:AAFNyf64Q9pM7lZxtgsYw-APaIn7huLoOkk"
 
     try:
-        OWNER_ID = int(Config.OWNER_ID)
+        OWNER_ID = int(5556308886)
     except ValueError:
         raise Exception("Your OWNER_ID variable is not a valid integer.")
 
-    JOIN_LOGGER = Config.JOIN_LOGGER
-    OWNER_USERNAME = Config.OWNER_USERNAME
-    ALLOW_CHATS = Config.ALLOW_CHATS
+    JOIN_LOGGER = -100
+    OWNER_USERNAME = "NoobStark_21"
+    ALLOW_CHATS = True
     try:
         DRAGONS = {int(x) for x in Config.DRAGONS or []}
         DEV_USERS = {int(x) for x in Config.DEV_USERS or []}
@@ -184,21 +184,21 @@ else:
     except ValueError:
         raise Exception("Your tiger users list does not contain valid integers.")
 
-    INFOPIC = Config.INFOPIC
-    EVENT_LOGS = Config.EVENT_LOGS 
-    ERROR_LOGS = Config.ERROR_LOGS
-    WEBHOOK = Config.WEBHOOK
+    INFOPIC = True
+    EVENT_LOGS = -100 
+    ERROR_LOGS = -100
+    WEBHOOK = Config.WEBHOOK 
     PORT = Config.PORT
-    CERT_PATH = Config.CERT_PATH
-    API_ID = Config.API_ID
-    API_HASH = Config.API_HASH
+ #   CERT_PATH = Config.CERT_PATH
+    API_ID = 16228540
+    API_HASH = "57a8fac91b598c8c2e7fdde3c8407020"
     BOT_API_URL = Config.BOT_API_URL
     ARQ_API_URL = Config.ARQ_API_URL
     ARQ_API_KEY = Config.ARQ_API_KEY
-    DB_URL = Config.DB_URL
-    DB_URL2 =Config.DB_URL2
-    DONATION_LINK = Config.DONATION_LINK
-    STRICT_GBAN = Config.STRICT_GBAN
+    DB_URL = "postgres://czexakoh:OHsNjEqHAmnyCCSq8Pq1W6RWurBIQbze@babar.db.elephantsql.com/czexakoh"
+    DB_URL2 = "mongodb+srv://konsabhai:liyaxlambert*143@cluster0.gdhaofo.mongodb.net/?retryWrites=true&w=majority"
+    DONATION_LINK = "https://t.me/NoobStark_21"
+    STRICT_GBAN = True
     WORKERS = Config.WORKERS
     BAN_STICKER = Config.BAN_STICKER
     TEMP_DOWNLOAD_DIRECTORY = Config.TEMP_DOWNLOAD_DIRECTORY
@@ -207,20 +207,20 @@ else:
    # CASH_API_KEY = Config.CASH_API_KEY
     TIME_API_KEY = Config.TIME_API_KEY
     WALL_API = Config.WALL_API
-    MONGO_DB_URL = Config.MONGO_DB_URL
-    MONGO_DB = Config.MONGO_DB
+    MONGO_DB_URL = "mongodb+srv://konsabhai:liyaxlambert*143@cluster0.gdhaofo.mongodb.net/?retryWrites=true&w=majority"
+    MONGO_DB = "mongodb+srv://konsabhai:liyaxlambert*143@cluster0.gdhaofo.mongodb.net/?retryWrites=true&w=majority"
     REDIS_URL = Config.REDIS_URL
-    SUPPORT_CHAT = Config.SUPPORT_CHAT
-    UPDATES_CHANNEL = Config.UPDATES_CHANNEL
+    SUPPORT_CHAT = "StarkSupport_21"
+    UPDATES_CHANNEL = "StarkBotUpdates_21"
     SPAMWATCH_SUPPORT_CHAT = "SpamWatchSupport"
     SPAMWATCH_API = Config.SPAMWATCH_API
     REM_BG_API_KEY = Config.REM_BG_API_KEY
   #  OPENWEATHERMAP_ID = Config.OPENWEATHERMAP_ID
-    APP_ID = Config.APP_ID
-    APP_HASH = Config.APP_HASH
+    APP_ID = 16228540
+    APP_HASH = "57a8fac91b598c8c2e7fdde3c8407020"
     BOT_ID = 5556308886
-    BOT_USERNAME = Config.BOT_USERNAME
-    BOT_NAME  = Config.BOT_NAME
+    BOT_USERNAME = "Ohonbot"
+    BOT_NAME  = "ok"
     ALLOW_EXCL = True
     DEL_CMDS = True
    # GENIUS_API_TOKEN = Config.GENIUS_API_TOKEN

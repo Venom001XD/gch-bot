@@ -109,12 +109,23 @@ HELP_IMG = "https://telegra.ph/file/9dfcdab5244a61b323210.jpg"
 START_IMG = "https://telegra.ph/file/eb8617465e7a62650f862.jpg"
     
 PM_START_TEXT = """
-  ⫸ [Himawari](https://telegra.ph/file/7ba6536e75495cdc6ceb1.jpg) ⫷
-Konnichiwa, I am {}
- 
-I am an Anime themed group management bot with some fun extras ;)
+────「 [ᴘᴏᴡᴇʀ]({}) 」────
+Hᴀʏɪ Hᴀʏɪ! {} sᴇɴᴘᴀɪ,
+ɪ ᴀᴍ ᴘᴏᴡᴇʀ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘs.
+sᴏ ᴡʜᴀᴛ ᴀʀᴇ ʏᴏᴜ ᴡᴀɪᴛɪɴɢ ғᴏʀ sᴇɴᴘᴀɪ ʀᴇʟᴀx ᴀɴᴅ ᴊᴜsᴛ ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ʟᴇᴍᴍᴇ ʜᴀɴᴅʟᴇ ᴀʟʟ ᴛʜᴇ ᴛᴀsᴋs.
+━─━────༺༻────━─━
+⦿ ᴜᴘᴛɪᴍᴇ {}
+⦿ {} ᴡᴇᴇʙs ᴀᴄʀᴏss {} ᴄʜᴀᴛs,
+━─━────༺༻────━─━
+ʜɪᴛ /ʜᴇʟᴘ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs.
+"""
 
-Want to see my powers? hehe, use /help or commands button below."""
+PHOTO = (
+      "https://telegra.ph/file/4a4b4cf7ae29499194051.jpg",
+      "https://telegra.ph/file/b07a9cb3cca0ae94edd26.jpg",
+      "https://telegra.ph/file/e15898b918faa321e77c6.jpg",
+      "https://telegra.ph/file/6c0574f4cfdb4c7f0fa4c.jpg",
+)
 
 
 GROUP_START_TEXT = """
@@ -144,13 +155,11 @@ buttons = [
 
                     
 HELP_STRINGS = """
-*Main* commands available:
-• /help: PM's you this message.
-• /help <module name>: PM's you info about that module.
-• /donate: information on how to donate!
-• /settings:
-   - in PM: will send you your settings for all supported modules.
-   - in a group: will redirect you to pm, with all that chat's settings.
+ᴍᴀɪɴ ᴄᴏᴍᴍᴀɴᴅs ᴀᴠᴀɪʟᴀʙʟᴇ:
+⧃ /help ➻ ᴘᴍ's ʏᴏᴜ ᴛʜɪᴅ ᴍᴇssᴀɢᴇ.
+⧃ /help <ᴍᴏᴅᴜʟᴇ ɴᴀᴍᴇ> ➻  ᴘᴍ's ʏᴏᴜ ɪɴғᴏ ᴀʙᴏᴜᴛ ᴛʜᴀᴛ ᴍᴏᴅᴜʟᴇ.
+⧃ /donate ➻  ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴏɴ ʜᴏᴡ ᴛᴏ ᴅᴏɴᴀᴛᴇ.
+⧃ /settings ➻ ɪɴ ᴘᴍ ᴡɪʟʟ sᴇɴᴅ ʏᴏᴜ sᴇᴛᴛɪɴɢs ғᴏʀ ᴀʟʟ sᴜᴘᴘᴏʀᴛᴇᴅ ᴍᴏᴅᴜʟᴇs.ɪɴ ᴀ ɢʀᴏᴜᴘ ᴡɪʟʟ ʀᴇᴅɪʀᴇᴄᴛ ʏᴏᴜ ᴛᴏ ᴘᴍ, ᴡɪᴛʜ ᴀʟʟ ᴛʜᴀᴛ ᴄʜᴀᴛ's sᴇᴛᴛɪɴɢs.
 """
 
 DONATE_STRING = """Just support us, we will be more than happy"""
@@ -258,16 +267,16 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_text(
-                PM_START_TEXT.format(
-                    escape_markdown(context.bot.first_name),
-                    escape_markdown(first_name),
+                PM_START_TEXT.format(random.choice(PHOTO),escape_markdown(first_name),
                     escape_markdown(uptime),
                     sql.num_users(),
                     sql.num_chats()),                        
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
+                disable_web_page_preview=False,
             )
+
     else:
         update.effective_message.reply_photo(
             START_IMG, caption= "<code>OwO Onichan! I am ready to play, hehe~</code>: <code>{}</code>".format(

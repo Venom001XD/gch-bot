@@ -44,7 +44,7 @@ humanize
 img2pdf
 jikanpy
 launchpadlib==1.10.13
-lxml
+lxml==4.9.1
 lyricsgenius
 markdown
 markdown2>=2.4.0

@@ -715,6 +715,13 @@ def main():
 ┕──━──━──┑◆┍──━──━──┙""",
                 parse_mode=ParseMode.MARKDOWN,
             )
+        except Unauthorized:
+            LOGGER.warning(
+                f"Bot isn't able to send message to @{SUPPORT_CHAT}, go and check!"
+            )
+        except BadRequest as e:
+            LOGGER.warning(e.message)
+
     start_handler = DisableAbleCommandHandler("start", start, run_async=True)
 
     help_handler = DisableAbleCommandHandler("help", get_help, run_async=True)

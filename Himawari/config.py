@@ -53,10 +53,10 @@ class Config(object):
     #you can change these 
     INFOPIC=True #picture while doing /info
     STRICT_GBAN=True
-    API_ID=18126477 ##api id from my.telegram.org
-    APP_ID=18126477 #same as API_ID
-    API_HASH="e713e1187e6d140bc1a2119f603abdb6" ##api hash from my.telegram.org
-    APP_HASH="e713e1187e6d140bc1a2119f603abdb6" #same as API_HASH
+    API_ID=20458182 ##api id from my.telegram.org
+    APP_ID=20458182 #same as API_ID
+    API_HASH="57cfbf9df695cf55ab9ed89ea98bfa79" ##api hash from my.telegram.org
+    APP_HASH="57cfbf9df695cf55ab9ed89ea98bfa79" #same as API_HASH
     BL_CHATS=[1] #chats to be blacklisted
     MONGO_DB_URL="mongodb+srv://ssid143:liyaxlambert*143@cluster0.pdabrye.mongodb.net/?retryWrites=true&w=majority" ##mongo database link (necessary)
     DB_URL2="mongodb+srv://ssid143:liyaxlambert*143@cluster0.pdabrye.mongodb.net/?retryWrites=true&w=majority" #mongo db (not necessary)

@@ -126,10 +126,11 @@ sᴏ ᴡʜᴀᴛ ᴀʀᴇ ʏᴏᴜ ᴡᴀɪᴛɪɴɢ ғᴏʀ sᴇɴᴘᴀɪ ʀ�
 """
 
 PHOTO = (
-      "https://telegra.ph/file/9671383de4ce3126cc3e8.jpg",
-      "https://telegra.ph/file/cf660ec880bf428f2522e.jpg",
-      "https://telegra.ph/file/e15898b918faa321e77c6.jpg",
-      "https://telegra.ph/file/db6e4c6c125a78225145b.jpg",
+      "https://telegra.ph/file/54c506e4b2b28647c3928.jpg",
+      "https://telegra.ph/file/3a1be84ab63f43a6c72ac.jpg",
+      "https://telegra.ph/file/78f9f44b6c1ac1233b020.jpg",
+      "https://telegra.ph/file/d509a9f55c3e51d227aa4.jpg",
+      "https://telegra.ph/file/1a48436897f8cf9c929ac.jpg",
 )
 
 

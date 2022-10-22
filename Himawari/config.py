@@ -39,7 +39,7 @@ class Config(object):
     DB_URL2="mongodb+srv://meowhisswswuj7.mongodb.net/?retryWrites=true&w=majority" #mongo db (not necessary)
     DB_URL="postgres://rhluyfah:qvng2ftoA5MHivaSx7TFp2OUJXInC7B5@lucky.db.elephantsql.com/rhluyfah" #postgres sql database link
     REDIS_URL="redis://default:P7VUOV6JhzsFh2w4nkt8@containers-us-west-91.railway.app:6563" #redis database url from redislabs.com
-    TOKEN="5799456774:AAHsVSLOSTt7M2mqRS3AKjfIJuvuSbpgaSo" #bot token from @BotFather
+    TOKEN="5422339348:AAF1EhmGIltjFEiwvEseTXZqoZ__YG7M5vs" #bot token from @BotFather
     DEV_USERS=[5556308886] #developers id
     DRAGONS=[9656] #sudo users id
     DEMONS=[1909] #support user ids
@@ -62,6 +62,7 @@ class Config(object):
     TIME_API_KEY="QLLLDV7SWFD3" #not necessary
     SPAMWATCH_API="J968E_20LgxrKjsdN24cqYtD~gNRTbU" #spamwatch api token from @SpamWatchBot
     WALL_API="6950f5ds6a3" #wall api (not necessary)
+    BOT_ID = 1937701729
 
 
 class Production(Config):

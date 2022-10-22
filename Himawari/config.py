@@ -57,8 +57,8 @@ class Config(object):
     OWNER_USERNAME="SIXTH_H0KAGE" #owner username without @
     UPDATES_CHANNEL="PowerBotUpdates" #Updates/News Channel username without @
     BOT_USERNAME="PowerUltraXBot" #bot username without @
-    REM_BG_API_KEY="K2dsdsYma6cZx" #not necessary
-    GENIUS_API_TOKEN="e-8UdRQNrIssPyM" # api token from genius.com (not necessary)
+    REM_BG_API_KEY="LSdLgCceYz8vNqFgJVzrkDgR" #not necessary
+    GENIUS_API_TOKEN="28jwoKAkskaSjsnsksAjnwjUJwj" # api token from genius.com (not necessary)
     TIME_API_KEY="QLLLDV7SWFD3" #not necessary
     SPAMWATCH_API="IDFrVHvi~xbI5VKhZWfCg7uv5Dqf_kwq_HqxTJkVfUaZLx2tDY09w901XI2t6CDH" #spamwatch api token from @SpamWatchBot
     WALL_API="2455acab48f3a935a8e703e54e26d121" #wall api (not necessary)

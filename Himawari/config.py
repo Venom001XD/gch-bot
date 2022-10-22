@@ -25,7 +25,7 @@ class Config(object):
     NO_LOAD="translation"
     MONGO_DB="Himawari"
     WEBHOOK=False
-    BOT_API_URL="https://api.telegram.org/bot"
+    BOT_API_URL="https://api.telegram.org/PowerUltraXBot"
 
     #you can change these 
     INFOPIC=True #picture while doing /info
@@ -50,8 +50,8 @@ class Config(object):
     JOIN_LOGGER=-1001523  #log channel/group id
     OWNER_ID=1937701729 #owner id in integer
     ERROR_LOGS=-1001 #support group id
-    BOT_NAME="Himawari" #your bot name
-    ARQ_API_KEY="SLSFXSsdUXNSMH-ARQ" #ARQ api key from @ARQRobot
+    BOT_NAME="Power" #your bot name
+    ARQ_API_KEY="EIFSEZ-FKVDZN-WHNGHO-DIZNLM-ARQ" #ARQ api key from @ARQRobot
     ARQ_API_URL="arq.hamker.dev" #arq link
     SUPPORT_CHAT="PowerSupportGroup" #support group username without @
     OWNER_USERNAME="SIXTH_H0KAGE" #owner username without @
@@ -60,7 +60,7 @@ class Config(object):
     REM_BG_API_KEY="K2dsdsYma6cZx" #not necessary
     GENIUS_API_TOKEN="e-8UdRQNrIssPyM" # api token from genius.com (not necessary)
     TIME_API_KEY="QLLLDV7SWFD3" #not necessary
-    SPAMWATCH_API="J968E_20LgxrKjsdN24cqYtD~gNRTbU" #spamwatch api token from @SpamWatchBot
+    SPAMWATCH_API="IDFrVHvi~xbI5VKhZWfCg7uv5Dqf_kwq_HqxTJkVfUaZLx2tDY09w901XI2t6CDH" #spamwatch api token from @SpamWatchBot
     WALL_API="2455acab48f3a935a8e703e54e26d121" #wall api (not necessary)
     BOT_ID = 1937701729
 

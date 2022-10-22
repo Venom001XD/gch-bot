@@ -106,7 +106,7 @@ HELP_MSG = "Click the button below to get help menu in your pm hihi~"
 START_MSG = "*Hie Onichwannnn~ UwU* I am well and alive ;)"
 
 HELP_IMG = "https://telegra.ph/file/9dfcdab5244a61b323210.jpg"
-START_IMG = "https://telegra.ph/file/eb8617465e7a62650f862.jpg"
+START_IMG = "https://telegra.ph/file/1c7d99cfd32f3c89b80ce.mp4"
     
 PM_START_TEXT = """
 ────「 [ᴘᴏᴡᴇʀ]({}) 」────
@@ -136,21 +136,21 @@ Haven't slept since: {}
 buttons = [
     [
                         InlineKeyboardButton(
-                            text=f"Summon Meow ➕",
+                            text=f"➕ ᴀᴅᴅ ᴍᴇ ɪᴍ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕",
                             url=f"t.me/{BOT_USERNAME}?startgroup=true")
-                    ],
-                   [
-                       InlineKeyboardButton(text="📓 Commands", callback_data="help_back"),
-                       InlineKeyboardButton(text="Source 🌐", url=f"https://github.com/ArshCypherZ/HWBot")
                     ],
                     [                  
                        InlineKeyboardButton(
-                             text="Support 🥂",
+                             text="sᴜᴘᴘᴏʀᴛ",
                              url=f"https://t.me/{SUPPORT_CHAT}"),
                        InlineKeyboardButton(
-                             text="Updates 🏃‍♂️",
+                             text="ᴜᴘᴅᴀᴛᴇs",
                              url=f"https://t.me/{UPDATES_CHANNEL}")
-                     ], 
+                   ], 
+                   [
+                       InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅs", callback_data="help_back"),                       
+                   ],
+                    
     ]
 
                     
@@ -162,7 +162,7 @@ HELP_STRINGS = """
 ⧃ /settings ➻ ɪɴ ᴘᴍ ᴡɪʟʟ sᴇɴᴅ ʏᴏᴜ sᴇᴛᴛɪɴɢs ғᴏʀ ᴀʟʟ sᴜᴘᴘᴏʀᴛᴇᴅ ᴍᴏᴅᴜʟᴇs.ɪɴ ᴀ ɢʀᴏᴜᴘ ᴡɪʟʟ ʀᴇᴅɪʀᴇᴄᴛ ʏᴏᴜ ᴛᴏ ᴘᴍ, ᴡɪᴛʜ ᴀʟʟ ᴛʜᴀᴛ ᴄʜᴀᴛ's sᴇᴛᴛɪɴɢs.
 """
 
-DONATE_STRING = """Just support us, we will be more than happy"""
+DONATE_STRING = """ᴊᴜsᴛ sᴜᴘᴘᴏʀᴛ & ᴀᴅᴅ ᴍᴇ ɪɴ ᴍᴏʀᴇ ɢʀᴏᴜᴘs ᴛʜᴀᴛ ᴡɪʟʟ ʙᴇ ᴇɴᴏᴜɢʜ ᴅᴏᴀᴛɪᴏɴ ғᴏʀ ᴍᴇ."""
 
 
 IMPORTED = {}
@@ -278,21 +278,21 @@ def start(update: Update, context: CallbackContext):
             )
 
     else:
-        update.effective_message.reply_photo(
-            START_IMG, caption= "<code>OwO Onichan! I am ready to play, hehe~</code>: <code>{}</code>".format(
+        update.effective_message.reply_video(
+            START_IMG, caption= "<code>ʜᴇʜᴇ ᴀᴍ ʀᴇᴀᴅʏ ᴛᴏ ᴋɪʟʟ ᴍᴏɴsᴛᴇʀs.\nᴜᴘᴛɪᴍᴇ~</code>: <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text="Support ✨", url=f"https://telegram.dog/{SUPPORT_CHAT}"),
+                  InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url=f"https://telegram.dog/{SUPPORT_CHAT}"),
                   
                   
-                  InlineKeyboardButton(text="Updates 🌻", url=f"https://telegram.dog/{UPDATES_CHANNEL}")
+                  InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇs", url=f"https://telegram.dog/{UPDATES_CHANNEL}")
                       ],
                     [
-                       InlineKeyboardButton(text="Alliance 🌐", url="https://telegram.dog/ViciousAlliance")
+                       InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ɪɴ ᴍᴏʀᴇ ɢʀᴏᴜᴘs", url="https://telegram.dog/ViciousAlliance")
                   ]
                 ]
             ),

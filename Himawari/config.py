@@ -53,17 +53,17 @@ class Config(object):
     #you can change these 
     INFOPIC=True #picture while doing /info
     STRICT_GBAN=True
-    API_ID=20458182 ##api id from my.telegram.org
-    APP_ID=20458182 #same as API_ID
-    API_HASH="57cfbf9df695cf55ab9ed89ea98bfa79" ##api hash from my.telegram.org
-    APP_HASH="57cfbf9df695cf55ab9ed89ea98bfa79" #same as API_HASH
+    API_ID=681 ##api id from my.telegram.org
+    APP_ID=6281 #same as API_ID
+    API_HASH="45aabfacadsdsds" ##api hash from my.telegram.org
+    APP_HASH="45aabfadsdsd" #same as API_HASH
     BL_CHATS=[1] #chats to be blacklisted
-    MONGO_DB_URL="mongodb+srv://ssid143:liyaxlambert*143@cluster0.pdabrye.mongodb.net/?retryWrites=true&w=majority" ##mongo database link (necessary)
-    DB_URL2="mongodb+srv://ssid143:liyaxlambert*143@cluster0.pdabrye.mongodb.net/?retryWrites=true&w=majority" #mongo db (not necessary)
-    DB_URL="postgres://fdgyqfrh:47TwHvQzYU5efrUT5uw2WMsS9mIe_WTU@lucky.db.elephantsql.com/fdgyqfrh" #postgres sql database link
+    MONGO_DB_URL="mongodb://mongo:vIRDQC9a5sQ8KFme3GLr@containers-us-west-93.railway.app:6776" ##mongo database link (necessary)
+    DB_URL2="mongodb://mongo:vIRDQC9a5sQ8KFme3GLr@containers-us-west-93.railway.app:6776" #mongo db (not necessary)
+    DB_URL="postgresql://postgres:49iTqNYb7Pu7n3kHUkDY@containers-us-west-104.railway.app:7654/railway" #postgres sql database link
     REDIS_URL="redis://default:GDLSeElPaIlt9sCXKsWf@containers-us-west-107.railway.app:5671" #redis database url from redislabs.com
-    TOKEN="5518786755:AAGcId98RAvswtmW-w31s4DbTm7H_m7jAKk" #bot token from @BotFather
-    DEV_USERS=[5306064258] #developers id
+    TOKEN="5796746300:AAF1Er8bKUdG24I4_U9AjJHQP3OXuYRa6mc" #bot token from @BotFather
+    DEV_USERS=[1937701729] #developers id
     DRAGONS=[9656] #sudo users id
     DEMONS=[1909] #support user ids
     TIGERS=[1] #commas for multiple ids
@@ -85,7 +85,7 @@ class Config(object):
     TIME_API_KEY="QLLLDV7SWFD3" #not necessary
     SPAMWATCH_API="J968E_20LgxrKjsdN24cqYtD~gNRTbU" #spamwatch api token from @SpamWatchBot
     WALL_API="6950f5ds6a3" #wall api (not necessary)
-    BOT_ID = 5556308886
+    BOT_ID = 1937701729
 
 class Production(Config):
     LOGGER=True

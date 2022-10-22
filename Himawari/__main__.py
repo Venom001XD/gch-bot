@@ -27,7 +27,7 @@ from Himawari import (
     dispatcher,
     StartTime,
     telethn,
-    pbot,
+    pgram as pbot,
     updater,
 )
 

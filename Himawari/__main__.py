@@ -29,6 +29,11 @@ import time
 import re
 import traceback
 import Himawari.modules.sql.users_sql as sql
+from platform import python_version as y
+from pyrogram import __version__ as pyrover
+from telegram import __version__ as telever
+from telethon import __version__ as tlhver
+
 
 from typing import Optional
 from Himawari import (

@@ -117,7 +117,7 @@ sᴏ ᴡʜᴀᴛ ᴀʀᴇ ʏᴏᴜ ᴡᴀɪᴛɪɴɢ ғᴏʀ sᴇɴᴘᴀɪ ʀ�
 ⦿ ᴜᴘᴛɪᴍᴇ {}
 ⦿ {} ᴡᴇᴇʙs ᴀᴄʀᴏss {} ᴄʜᴀᴛs,
 ━─━────༺༻────━─━
-ʜɪᴛ /ʜᴇʟᴘ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs.
+ʜɪᴛ /help ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs.
 """
 
 PHOTO = (
@@ -427,9 +427,9 @@ def himawari_callback_data(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                     InlineKeyboardButton(text="⫷", callback_data="himawari_prev"),
-                    InlineKeyboardButton(text="Back", callback_data="himawari_back"),
-                     InlineKeyboardButton(text="⫸", callback_data="himawari_next")
+                     InlineKeyboardButton(text="⨭", callback_data="himawari_prev"),
+                    InlineKeyboardButton(text="⥀ʙᴀᴄᴋ⥁", callback_data="himawari_back"),
+                     InlineKeyboardButton(text="⨵", callback_data="himawari_next")
                  ]
                 ]
             ),
@@ -484,7 +484,7 @@ def get_help(update, context):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="⥀ʙᴀᴄᴋ⥁", callback_data="help_back")]]
             ),
         )
 
@@ -556,7 +556,7 @@ def settings_button(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Back",
+                                text="⥀ʙᴀᴄᴋ⥁",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]

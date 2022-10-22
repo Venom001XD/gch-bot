@@ -7,12 +7,12 @@ import time
 import re
 import sys
 import traceback
-import RoroRobot.modules.sql.users_sql as sql
+import Himawari.modules.sql.users_sql as sql
 from sys import argv
 from typing import Optional
 from telegram import __version__ as peler
 from platform import python_version as memek
-from RoroRobot import (
+from Himawari import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -33,9 +33,9 @@ from RoroRobot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from RoroRobot.modules import ALL_MODULES
-from RoroRobot.modules.helper_funcs.chat_status import is_user_admin
-from RoroRobot.modules.helper_funcs.misc import paginate_modules
+from Himawari.modules import ALL_MODULES
+from Himawari.modules.helper_funcs.chat_status import is_user_admin
+from Himawari.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -131,7 +131,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("RoroRobot.modules." + module_name)
+    imported_module = importlib.import_module("Himawari.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 

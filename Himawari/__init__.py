@@ -209,7 +209,7 @@ else:
     WALL_API = Config.WALL_API
     MONGO_DB_URL = "mongodb+srv://konsabhai:liyaxlambert*143@cluster0.gdhaofo.mongodb.net/?retryWrites=true&w=majority"
     MONGO_DB = "mongodb+srv://konsabhai:liyaxlambert*143@cluster0.gdhaofo.mongodb.net/?retryWrites=true&w=majority"
-    REDIS_URL = Config.REDIS_URL
+    REDIS_URL = "redis://default:P7VUOV6JhzsFh2w4nkt8@containers-us-west-91.railway.app:6563"
     SUPPORT_CHAT = "StarkSupport_21"
     UPDATES_CHANNEL = "StarkBotUpdates_21"
     SPAMWATCH_SUPPORT_CHAT = "SpamWatchSupport"

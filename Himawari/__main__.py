@@ -436,7 +436,7 @@ def himawari_callback_data(update, context):
         )
     elif query.data == "himawari_back":
         first_name = update.effective_user.first_name
-            update.effective_message.reply_text(
+            query.message.edit_text(
                 PM_START_TEXT.format(random.choice(PHOTO),escape_markdown(first_name),
                     escape_markdown(uptime),
                     sql.num_users(),

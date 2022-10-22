@@ -394,7 +394,7 @@ ECHO_HANDLER = DisableAbleCommandHandler("echo", echo, filters=Filters.chat_type
 
 dispatcher.add_handler(ECHO_HANDLER)
 
-__mod_name__ = "Extras"
+__mod_name__ = "𝙴xᴛʀᴀs"
 __command_list__ = ["id", "echo"]
 __handlers__ = [
     ECHO_HANDLER

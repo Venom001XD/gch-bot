@@ -615,4 +615,4 @@ Separate diff replies by `%%%` to get random replies
 *Note*: Filters also support markdown formatters like: {first}, {last} etc.. and buttons.
 Check /markdownhelp to know more!
 """
-__mod_name__ = "Filters"
+__mod_name__ = "𝙵ɪʟᴛᴇʀs"

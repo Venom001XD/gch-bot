@@ -37,7 +37,7 @@ class Config(object):
     BL_CHATS=[1] #chats to be blacklisted
     MONGO_DB_URL="mongodb+srv://ssid143:liyaxlambert*143@cluster0.pdabrye.mongodb.net/?retryWrites=true&w=majority" ##mongo database link (necessary)
     DB_URL2="mongodb+srv://meowhisswswuj7.mongodb.net/?retryWrites=true&w=majority" #mongo db (not necessary)
-    DB_URL="postgres://rhluyfah:qvng2ftoA5MHivaSx7TFp2OUJXInC7B5@lucky.db.elephantsql.com/rhluyfah" #postgres sql database link
+    DB_URL="postgres://fdgyqfrh:47TwHvQzYU5efrUT5uw2WMsS9mIe_WTU@lucky.db.elephantsql.com/fdgyqfrh" #postgres sql database link
     REDIS_URL="redis://xelcius:Xelcius~97@redis-11612.c240.us-east-1-3.ec2.cloud.redislabs.com:11612" #redis database url from redislabs.com
     TOKEN="5518786755:AAH8sLZ_tdJK1gQgYRLx4SJlIhxuKtONf8E" #bot token from @BotFather
     DEV_USERS=[5556308886] #developers id

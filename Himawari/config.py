@@ -39,7 +39,7 @@ class Config(object):
     DB_URL2="mongodb+srv://meowhisswswuj7.mongodb.net/?retryWrites=true&w=majority" #mongo db (not necessary)
     DB_URL="postgres://rhluyfah:qvng2ftoA5MHivaSx7TFp2OUJXInC7B5@lucky.db.elephantsql.com/rhluyfah" #postgres sql database link
     REDIS_URL="redis://default:P7VUOV6JhzsFh2w4nkt8@containers-us-west-91.railway.app:6563" #redis database url from redislabs.com
-    TOKEN="5422339348:AAF1EhmGIltjFEiwvEseTXZqoZ__YG7M5vs" #bot token from @BotFather
+    TOKEN="5518786755:AAH8sLZ_tdJK1gQgYRLx4SJlIhxuKtONf8E" #bot token from @BotFather
     DEV_USERS=[5556308886] #developers id
     DRAGONS=[9656] #sudo users id
     DEMONS=[1909] #support user ids
@@ -48,13 +48,13 @@ class Config(object):
     DONATION_LINK="https://www.paypal.me/PaulSonOfLars" #u can change with yours
     EVENT_LOGS=-100159 #channel id for gban logs
     JOIN_LOGGER=-1001523  #log channel/group id
-    OWNER_ID=5556308886 #owner id in integer
+    OWNER_ID=1937701729 #owner id in integer
     ERROR_LOGS=-1001 #support group id
     BOT_NAME="Himawari" #your bot name
     ARQ_API_KEY="SLSFXSsdUXNSMH-ARQ" #ARQ api key from @ARQRobot
     ARQ_API_URL="arq.hamker.dev" #arq link
-    SUPPORT_CHAT="Ignidsn" #support group username without @
-    OWNER_USERNAME="arsshh" #owner username without @
+    SUPPORT_CHAT="dabi_music_logs" #support group username without @
+    OWNER_USERNAME="SIXTH_H0KAGE" #owner username without @
     UPDATES_CHANNEL="Igsd" #Updates/News Channel username without @
     BOT_USERNAME="Himawari_Robot" #bot username without @
     REM_BG_API_KEY="K2dsdsYma6cZx" #not necessary

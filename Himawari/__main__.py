@@ -110,8 +110,8 @@ START_IMG = "https://telegra.ph/file/1c7d99cfd32f3c89b80ce.mp4"
     
 PM_START_TEXT = """
 ────「 [ᴘᴏᴡᴇʀ]({}) 」────
-Hᴀʏɪ Hᴀʏɪ! {} sᴇɴᴘᴀɪ,
-ɪ ᴀᴍ ᴘᴏᴡᴇʀ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘs.
+*Hᴀʏɪ Hᴀʏɪ*! {} sᴇɴᴘᴀɪ,
+ɪ ᴀᴍ *ᴘᴏᴡᴇʀ* ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘs.
 sᴏ ᴡʜᴀᴛ ᴀʀᴇ ʏᴏᴜ ᴡᴀɪᴛɪɴɢ ғᴏʀ sᴇɴᴘᴀɪ ʀᴇʟᴀx ᴀɴᴅ ᴊᴜsᴛ ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ʟᴇᴍᴍᴇ ʜᴀɴᴅʟᴇ ᴀʟʟ ᴛʜᴇ ᴛᴀsᴋs.
 ━─━────༺༻────━─━
 ⦿ ᴜᴘᴛɪᴍᴇ {}
@@ -136,7 +136,7 @@ Haven't slept since: {}
 buttons = [
     [
                         InlineKeyboardButton(
-                            text=f"➕ ᴀᴅᴅ ᴍᴇ ɪᴍ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕",
+                            text=f"➕ ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕",
                             url=f"t.me/{BOT_USERNAME}?startgroup=true")
                     ],
                     [                  
@@ -699,6 +699,22 @@ def migrate_chats(update: Update, context: CallbackContext):
     raise DispatcherHandlerStop
     
 def main():
+    if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
+        try:
+            dispatcher.bot.send_photo(
+                f"@{SUPPORT_CHAT}",
+                photo="https://telegra.ph/file/2e21ac3c56995777de8bb.jpg",
+                caption=f"""
+ㅤ🥀 *POWER* ɪs ᴀʟɪᴠᴇ bro...
+
+┍──━──━──┙◆┕──━──━──┑
+ㅤ❂ **ᴘʏᴛʜᴏɴ :** `{y()}`
+ㅤ❂ **ʟɪʙʀᴀʀʏ :** `{telever}`
+ㅤ❂ **ᴛᴇʟᴇᴛʜᴏɴ :** `{tlhver}`
+ㅤ❂ **ᴩʏʀᴏɢʀᴀᴍ :** `{pyrover}`
+┕──━──━──┑◆┍──━──━──┙""",
+                parse_mode=ParseMode.MARKDOWN,
+            )
     start_handler = DisableAbleCommandHandler("start", start, run_async=True)
 
     help_handler = DisableAbleCommandHandler("help", get_help, run_async=True)

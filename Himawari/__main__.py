@@ -107,10 +107,10 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-HELP_MSG = "Click the button below to get help menu in your pm hihi~"
+HELP_MSG = "ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs."
 START_MSG = "*Hie Onichwannnn~ UwU* I am well and alive ;)"
 
-HELP_IMG = "https://telegra.ph/file/9dfcdab5244a61b323210.jpg"
+HELP_IMG = "https://telegra.ph/file/2ee601b35a24579660a1a.jpg"
 START_IMG = "https://telegra.ph/file/1c7d99cfd32f3c89b80ce.mp4"
     
 PM_START_TEXT = """
@@ -135,8 +135,8 @@ PHOTO = (
 
 
 GROUP_START_TEXT = """
-I'm awake already Onichan!
-Haven't slept since: {} 
+ɪ'ᴍ ᴀᴡᴀᴋᴇ ᴀʟʀᴇᴀᴅʏ ʜᴀᴠᴇɴ'ᴛ sʟᴇᴘᴛ.
+sɪɴᴄᴇ - {}.
 """
 
 buttons = [
@@ -298,7 +298,7 @@ def start(update: Update, context: CallbackContext):
                   InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇs", url=f"https://telegram.dog/{UPDATES_CHANNEL}")
                       ],
                     [
-                       InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ɪɴ ᴍᴏʀᴇ ɢʀᴏᴜᴘs", url="https://telegram.dog/ViciousAlliance")
+                       InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ɪɴ ᴍᴏʀᴇ ɢʀᴏᴜᴘs", url="http://t.me/PowerUltraXBot?startgroup=true")
                   ]
                 ]
             ),
@@ -382,7 +382,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
+                    [[InlineKeyboardButton(text="⥀ʙᴀᴄᴋ⥁", callback_data="help_back")]]
                 ),
             )
 
@@ -469,7 +469,7 @@ def get_help(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Open In Private Chat",
+                            text="ᴏᴘᴇɴ ɪɴ ᴘʀɪᴠᴀᴛᴇ",
                             url="t.me/{}?start=help".format(context.bot.username),
                         )
                     ]
@@ -661,7 +661,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 254318997 and DONATION_LINK:
+        if OWNER_ID != 1937701729 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),

@@ -37,7 +37,7 @@ from Himawari.modules.sql import SESSION
 import Himawari.modules.sql.userinfo_sql as sql
 from Himawari.modules.disable import DisableAbleCommandHandler
 from Himawari.modules.sql.global_bans_sql import is_user_gbanned
-from Himawari.modules.redis.afk_redis import is_user_afk, afk_reason
+from Himawari.modules.sql.afk_redis import is_user_afk, afk_reason
 from Himawari.modules.sql.users_sql import get_user_num_chats
 from Himawari.modules.helper_funcs.chat_status import sudo_plus
 from Himawari.modules.helper_funcs.extraction import extract_user

@@ -68,11 +68,11 @@ class Config(object):
     DEMONS=[1909] #support user ids
     TIGERS=[1] #commas for multiple ids
     WOLVES=[2112, 1212] #commas for multiple ids 
-    DONATION_LINK="https://www.paypal.me/PaulSonOfLars" #u can change with yours
-    EVENT_LOGS=-100159 #channel id for gban logs
-    JOIN_LOGGER=-1001523  #log channel/group id
+    DONATION_LINK="https://t.me/PowerSupportGroup" #u can change with yours
+    EVENT_LOGS=-1001844019934  #channel id for gban logs
+    JOIN_LOGGER= -1001840259259  #log channel/group id
     OWNER_ID=1937701729 #owner id in integer
-    ERROR_LOGS=-1001 #support group id
+    ERROR_LOGS=-1001885680842 #support group id
     BOT_NAME="Power" #your bot name
     ARQ_API_KEY="XLEPQE-OQEQOU-APAHMM-RGHMQG-ARQ" #ARQ api key from @ARQRobot
     ARQ_API_URL="arq.hamker.dev" #arq link
@@ -82,7 +82,7 @@ class Config(object):
     BOT_USERNAME="PowerUltraXBot" #bot username without @
     REM_BG_API_KEY="28jwoKAkskaSjsnsksAjnwjUJwj" #not necessary
     GENIUS_API_TOKEN="J968E_20LgxrKjsdN24cqYtD~gNRTbU" # api token from genius.com (not necessary)
-    TIME_API_KEY="QLLLDV7SWFD3" #not necessary
+    TIME_API_KEY="GPOIC5IBWGWC" #not necessary
     SPAMWATCH_API="4TJ6fBDw3opqHppbjkDIEhqjNPx6OJvBciDJ2hzds4BEgbtj7gchgfinCZIBygH7" #spamwatch api token from @SpamWatchBot
     WALL_API="6950f5ds6a3" #wall api (not necessary)
     BOT_ID = 5518786755

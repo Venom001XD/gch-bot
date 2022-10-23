@@ -58,8 +58,8 @@ class Config(object):
     API_HASH="ee52339bd338181179c69f65d2260bd4" ##api hash from my.telegram.org
     APP_HASH="ee52339bd338181179c69f65d2260bd4" #same as API_HASH
     BL_CHATS=[1] #chats to be blacklisted
-    MONGO_DB_URI = "" ##mongo database link (necessary)
-    DB_URL2="" #mongo db (not necessary)
+    MONGO_DB_URI = "mongodb+srv://Power:powerUltraXBot@cluster0.1q2gvcz.mongodb.net/?retryWrites=true&w=majority" ##mongo database link (necessary)
+    DB_URL2="mongodb+srv://Power:powerUltraXBot@cluster0.1q2gvcz.mongodb.net/?retryWrites=true&w=majority" #mongo db (not necessary)
     DB_URL="postgres://wtfssbcn:8nHG5UA5keMXdDDRqlzRL8YV6cTD1GQt@peanut.db.elephantsql.com/wtfssbcn" #postgres sql database link
     REDIS_URL="redis://xelcius:Xelcius~97@redis-11612.c240.us-east-1-3.ec2.cloud.redislabs.com:11612" #redis database url from redislabs.com
     TOKEN="5626176478:AAGezbnqK2uO3Kwoun_Hevd7Et9sTIwoP7I" #bot token from @BotFather

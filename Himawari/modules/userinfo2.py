@@ -17,7 +17,7 @@ from telegram.ext import CallbackContext, CommandHandler
 from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
-from RoroRobot.modules.language import gs
+# from RoroRobot.modules.language import gs
     
 from Himawari import (
     DEV_USERS,

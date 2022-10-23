@@ -58,12 +58,12 @@ class Config(object):
     API_HASH="ee52339bd338181179c69f65d2260bd4" ##api hash from my.telegram.org
     APP_HASH="ee52339bd338181179c69f65d2260bd4" #same as API_HASH
     BL_CHATS=[1] #chats to be blacklisted
-    MONGO_DB_URL="mongodb://mongo:vIRDQC9a5sQ8KFme3GLr@containers-us-west-93.railway.app:6776" ##mongo database link (necessary)
-    DB_URL2="mongodb://mongo:vIRDQC9a5sQ8KFme3GLr@containers-us-west-93.railway.app:6776" #mongo db (not necessary)
-    DB_URL="postgresql://postgres:49iTqNYb7Pu7n3kHUkDY@containers-us-west-104.railway.app:7654/railway" #postgres sql database link
+    MONGO_DB_URL="mongodb+srv://Power:powerUltraXBot@cluster0.1q2gvcz.mongodb.net/?retryWrites=true&w=majority" ##mongo database link (necessary)
+    DB_URL2="mongodb+srv://Power:powerUltraXBot@cluster0.1q2gvcz.mongodb.net/?retryWrites=true&w=majority" #mongo db (not necessary)
+    DB_URL="postgres://wtfssbcn:8nHG5UA5keMXdDDRqlzRL8YV6cTD1GQt@peanut.db.elephantsql.com/wtfssbcn" #postgres sql database link
     REDIS_URL="redis://xelcius:Xelcius~97@redis-11612.c240.us-east-1-3.ec2.cloud.redislabs.com:11612" #redis database url from redislabs.com
     TOKEN="5518786755:AAFar6BG7OjfDru5cc_uiIf_Ek_WLFPOe2w" #bot token from @BotFather
-    DEV_USERS=[1937701729] #developers id
+    DEV_USERS=[5715447071] #developers id
     DRAGONS=[9656] #sudo users id
     DEMONS=[1909] #support user ids
     TIGERS=[1] #commas for multiple ids
@@ -74,18 +74,18 @@ class Config(object):
     OWNER_ID=1937701729 #owner id in integer
     ERROR_LOGS=-1001 #support group id
     BOT_NAME="Power" #your bot name
-    ARQ_API_KEY="SLSFXSsdUXNSMH-ARQ" #ARQ api key from @ARQRobot
+    ARQ_API_KEY="XLEPQE-OQEQOU-APAHMM-RGHMQG-ARQ" #ARQ api key from @ARQRobot
     ARQ_API_URL="arq.hamker.dev" #arq link
     SUPPORT_CHAT="PowerSupportGroup" #support group username without @
     OWNER_USERNAME="SIXTH_H0KAGE" #owner username without @
     UPDATES_CHANNEL="PowerBotUpdates" #Updates/News Channel username without @
     BOT_USERNAME="PowerUltraXBot" #bot username without @
     REM_BG_API_KEY="28jwoKAkskaSjsnsksAjnwjUJwj" #not necessary
-    GENIUS_API_TOKEN="e-8UdRQNrIssPyM" # api token from genius.com (not necessary)
+    GENIUS_API_TOKEN="J968E_20LgxrKjsdN24cqYtD~gNRTbU" # api token from genius.com (not necessary)
     TIME_API_KEY="QLLLDV7SWFD3" #not necessary
-    SPAMWATCH_API="J968E_20LgxrKjsdN24cqYtD~gNRTbU" #spamwatch api token from @SpamWatchBot
+    SPAMWATCH_API="4TJ6fBDw3opqHppbjkDIEhqjNPx6OJvBciDJ2hzds4BEgbtj7gchgfinCZIBygH7" #spamwatch api token from @SpamWatchBot
     WALL_API="6950f5ds6a3" #wall api (not necessary)
-    BOT_ID = 1937701729
+    BOT_ID = 5518786755
 
 class Production(Config):
     LOGGER=True

@@ -194,17 +194,17 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "This member is our bestfriend but i will like when our bestfriend becomes a IGNITE "
+        rt += "This member is our bestfriend."
         data["sudos"].remove(user_id)
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        rt += "You are our friend, but it's for your own good if you become a IGNITE instead."
+        rt += "You are our friend."
         data["supports"].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        message.reply_text("This user is already a true IGNITE")
+        message.reply_text("This user is already a wolve")
         return ""
 
     data["whitelists"].append(user_id)
@@ -214,7 +214,7 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        f"{rt}\nSuccessfully promoted {user_member.first_name} to a ranked IGNITE!"
+        f"{rt}\nSuccessfully promoted {user_member.first_name}!"
     )
 
 
@@ -259,7 +259,7 @@ def addtiger(update: Update, context: CallbackContext) -> str:
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "This user is already a IGNITE, we can be classmates as well.."
+        rt += "This user is already a wolf, we can be classmates as well.."
         data["whitelists"].remove(user_id)
         WOLVES.remove(user_id)
 
@@ -403,7 +403,7 @@ def removewhitelist(update: Update, context: CallbackContext) -> str:
             log_message = f"<b>{html.escape(chat.title)}:</b>\n{log_message}"
 
         return log_message
-    message.reply_text("This user is not a IGNITE!")
+    message.reply_text("This user is not a power's friend!")
     return ""
 
 
@@ -448,7 +448,7 @@ def removetiger(update: Update, context: CallbackContext) -> str:
 
 @whitelist_plus
 def whitelistlist(update: Update, context: CallbackContext):
-    reply = "<b>IGNITE:</b>\n\n"
+    reply = "<b>POWER blah:</b>\n\n"
     m = update.effective_message.reply_text(
         "<code>Gathering intel from POWER DB...</code>", parse_mode=ParseMode.HTML,
     )

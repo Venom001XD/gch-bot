@@ -3,7 +3,7 @@ import html
 import requests
 from Himawari.modules.sql import log_channel_sql as logsql
 import Himawari.modules.mongo.chatbot_mongo as sql
-from Himawari.config import AI_API_KEY as api
+from Himawari import AI_API_KEY as api
 
 from time import sleep
 from telegram import ParseMode

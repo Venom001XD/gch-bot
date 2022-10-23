@@ -1,166 +1,115 @@
-import json
-import html
-import requests
-from Himawari.modules.sql import log_channel_sql as logsql
-import Himawari.modules.mongo.chatbot_mongo as sql
-from Himawari import AI_API_KEY as api
+# thank @thehamkercat for the Api
+# https://arq.hamker.dev
+import os
+import re
+from asyncio import gather, get_event_loop, sleep
+.......................... 
 
-from time import sleep
-from telegram import ParseMode
-from telegram import (InlineKeyboardButton,
-                      InlineKeyboardMarkup, ParseMode, Update)
-from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler, Filters, MessageHandler)
-from telegram.utils.helpers import mention_html
-from Himawari.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from Himawari import  dispatcher
-from Himawari.modules.log_channel import gloggable, loggable
+from aiohttp import ClientSession
+from pyrogram import Client, filters, idle
+from Python_ARQ import ARQ
 
-bot_name = f"{dispatcher.bot.first_name}"
+is_config = os.path.exists("config.py")
 
-@user_admin_no_reply
-@loggable
-@gloggable
-def chatbot_status(update: Update, context: CallbackContext):
-    query= update.callback_query
-    bot = context.bot
-    user = update.effective_user
-    if query.data == "add_chatbot":
-        chat = update.effective_chat
-        is_chatbot = sql.is_chatbot(chat.id)
-        if not is_chatbot:
-            is_chatbot = sql.add_chatbot(chat.id)
-            LOG = (
-                f"<b>{html.escape(chat.title)}:</b>\n"
-                f"AI_ENABLE\n"
-                f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-            )
-            log_channel = logsql.get_chat_log_channel(chat.id)
-            if log_channel:
-                bot.send_message(
-                log_channel,
-                LOG,
-                parse_mode=ParseMode.HTML,
-                disable_web_page_preview=True,
-            )
-            update.effective_message.edit_text(
-                f"{bot_name} Chatbot Enabled by {mention_html(user.id, user.first_name)}.",
-                parse_mode=ParseMode.HTML,
-            )
-            return LOG
-        elif is_chatbot:
-            return update.effective_message.edit_text(
-                f"{bot_name} Chatbot Already Enabled.",
-                parse_mode=ParseMode.HTML,
-            )
-        else:
-            return update.effective_message.edit_text(
-                "Error!",
-                parse_mode=ParseMode.HTML,
-            )
-    elif query.data == "rem_chatbot":
-        chat = update.effective_chat
-        is_chatbot = sql.is_chatbot(chat.id)
-        if is_chatbot:
-            is_chatbot = sql.rm_chatbot(chat.id)
-            LOG = (
-                f"<b>{html.escape(chat.title)}:</b>\n"
-                f"AI_DISABLE\n"
-                f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-            )
-            log_channel = logsql.get_chat_log_channel(chat.id)
-            if log_channel:
-                bot.send_message(
-                log_channel,
-                LOG,
-                parse_mode=ParseMode.HTML,
-                disable_web_page_preview=True,
-            )
-            update.effective_message.edit_text(
-                f"{bot_name} Chatbot disabled by {mention_html(user.id, user.first_name)}.",
-                parse_mode=ParseMode.HTML,
-            )
-            return LOG
-        elif not is_chatbot:
-            return update.effective_message.edit_text(
-                f"{bot_name} Chatbot Already Disabled.",
-                parse_mode=ParseMode.HTML,
-            )
-        else:
-            return update.effective_message.edit_text(
-                "Error!",
-                parse_mode=ParseMode.HTML,
-            )
+if is_config:
+    from config import *
+else:
+    from sample_config import *
 
-@user_admin
-@loggable
-def chatbot(update: Update, context: CallbackContext):
-    message = update.effective_message
-    msg = "Choose an option"
-    keyboard = InlineKeyboardMarkup([[
-        InlineKeyboardButton(
-            text="Enable",
-            callback_data=r"add_chatbot")],
-       [
-        InlineKeyboardButton(
-            text="Disable",
-            callback_data=r"rem_chatbot")]])
-    message.reply_text(
-        msg,
-        reply_markup=keyboard,
-        parse_mode=ParseMode.HTML,
+Power = Client(
+    ":memory:",
+    bot_token=bot_token,
+    api_id=6,
+    api_hash="eb06d4abfb49dc3eeb1aeb98ae0f581e",
+)
+
+bot_id = int(bot_token.split(":")[0])
+arq = None
+
+
+async def PowerQuery(query: str, user_id: int):
+    query = (
+        query
+        if LANGUAGE == "en"
+        else (await arq.translate(query, "en")).result.translatedtext
+    )
+    resp = (await arq.luna(query, user_id)).result
+    return (
+        resp
+        if LANGUAGE == "en"
+        else (await arq.translate(resp, LANGUAGE)).result.translatedtext
     )
 
-def bot_message(context: CallbackContext, message):
-    reply_message = message.reply_to_message
-    if reply_message:
-        if reply_message.from_user.id == context.bot.get_me().id:
-            return True
-    else:
-        return False
 
-def chatbot_msg(update: Update, context: CallbackContext):
-    message = update.effective_message
-    chat_id = update.effective_chat.id
-    bot = context.bot
-    is_chatbot = sql.is_chatbot(chat_id)
-    if not is_chatbot:
-        return
-	
-    if message.text and not message.document:
-        if not bot_message(context, message):
+async def type_and_send(message):
+    chat_id = message.chat.id
+    user_id = message.from_user.id if message.from_user else 0
+    query = message.text.strip()
+    await message._client.send_chat_action(chat_id, "typing")
+    response, _ = await gather(PowerQuery(query, user_id), sleep(2))
+    await message.reply_text(response)
+    await message._client.send_chat_action(chat_id, "cancel")
+
+
+@Power.on_message(filters.command("repo") & ~filters.edited)
+async def repo(_, message):
+    await message.reply_text(
+        "It's private dumb shit",
+        disable_web_page_preview=True,
+    )
+
+
+@Power.on_message(filters.command("help") & ~filters.edited)
+async def start(_, message):
+    await Power.send_chat_action(message.chat.id, "typing")
+    await sleep(2)
+    await message.reply_text("/repo - Get Repo Link")
+
+
+@Power.on_message(
+    ~filters.private & filters.text & ~filters.command("help") & ~filters.edited,
+    group=69,
+)
+async def chat(_, message):
+    if message.reply_to_message:
+        if not message.reply_to_message.from_user:
             return
-        Message = message.text
-        bot.send_chat_action(chat_id, action="typing")
-        chatbot = requests.get('https://itsprodev.cf/chatbot/SOME1HING.php?api=' + api + '&message=' + Message)
-        Chat = json.loads(chatbot.text)
-        Chat = Chat['reply']
-        sleep(0.3)
-        message.reply_text(Chat, timeout=60)
+        from_user_id = message.reply_to_message.from_user.id
+        if from_user_id != bot_id:
+            return
+    else:
+        match = re.search(
+            "[.|\n]{0,}power[.|\n]{0,}",
+            message.text.strip(),
+            flags=re.IGNORECASE,
+        )
+        if not match:
+            return
+    await type_and_send(message)
 
-CHATBOTK_HANDLER = CommandHandler("chatbot", chatbot, run_async = True)
-ADD_CHAT_HANDLER = CallbackQueryHandler(chatbot_status, pattern=r"add_chatbot", run_async = True)
-RM_CHAT_HANDLER = CallbackQueryHandler(chatbot_status, pattern=r"rem_chatbot", run_async = True)
-CHATBOT_HANDLER = MessageHandler(
-    Filters.text & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!")
-                    & ~Filters.regex(r"^\/")), chatbot_msg, run_async = True)
 
-dispatcher.add_handler(ADD_CHAT_HANDLER)
-dispatcher.add_handler(CHATBOTK_HANDLER)
-dispatcher.add_handler(RM_CHAT_HANDLER)
-dispatcher.add_handler(CHATBOT_HANDLER)
+@Power.on_message(filters.private & ~filters.command("help") & ~filters.edited)
+async def chatpm(_, message):
+    if not message.text:
+        return
+    await type_and_send(message)
 
-__handlers__ = [
-    ADD_CHAT_HANDLER,
-    CHATBOTK_HANDLER,
-    RM_CHAT_HANDLER,
-    CHATBOT_HANDLER,
-]
 
-__mod_name__ = "𝙲ʜᴀᴛʙᴏᴛ"
+async def main():
+    global arq
+    session = ClientSession()
+    arq = ARQ(ARQ_API_BASE_URL, ARQ_API_KEY, session)
 
-__help__ = """
-*Admins only Commands*:
-  ➢ `/Chatbot`*:* Shows chatbot control panel
-
-*Thx @kira_yoshikage_789 for the API*
+    await Power.start()
+    print(
+        """
+-----------------
+| power Started! |
+-----------------
 """
+    )
+    await idle()
+
+
+loop = get_event_loop()
+loop.run_until_complete(main())

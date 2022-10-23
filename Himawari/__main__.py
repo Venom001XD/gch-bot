@@ -110,8 +110,8 @@ def get_readable_time(seconds: int) -> str:
 HELP_MSG = "ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs."
 START_MSG = "*Hie Onichwannnn~ UwU* I am well and alive ;)"
 
-HELP_IMG = "https://telegra.ph/file/2ee601b35a24579660a1a.jpg"
-START_IMG = "https://telegra.ph/file/1c7d99cfd32f3c89b80ce.mp4"
+HELP_IMG = "https://telegra.ph/file/a363d4f4a4c015194126e.jpg"
+START_IMG = "https://telegra.ph/file/dadabfb559ca7ad94a98e.jpg"
     
 PM_START_TEXT = """
 ────「 [ᴘᴏᴡᴇʀ]({}) 」────
@@ -126,11 +126,11 @@ sᴏ ᴡʜᴀᴛ ᴀʀᴇ ʏᴏᴜ ᴡᴀɪᴛɪɴɢ ғᴏʀ sᴇɴᴘᴀɪ ʀ�
 """
 
 PHOTO = (
-      "https://telegra.ph/file/54c506e4b2b28647c3928.jpg",
-      "https://telegra.ph/file/3a1be84ab63f43a6c72ac.jpg",
+      "https://telegra.ph/file/9e1b13321a69da7cc631d.jpg",
+      "https://telegra.ph/file/2c19b1dcd71f111f39cef.jpg",
       "https://telegra.ph/file/78f9f44b6c1ac1233b020.jpg",
-      "https://telegra.ph/file/d509a9f55c3e51d227aa4.jpg",
-      "https://telegra.ph/file/1a48436897f8cf9c929ac.jpg",
+      "https://telegra.ph/file/c813aa4a73cbe89ec5e5d.jpg",
+      "https://telegra.ph/file/f0212ebcb0e513c2ce7dd.jpg",
 )
 
 
@@ -298,7 +298,7 @@ def start(update: Update, context: CallbackContext):
                   InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇs", url=f"https://telegram.dog/{UPDATES_CHANNEL}")
                       ],
                     [
-                       InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ɪɴ ᴍᴏʀᴇ ɢʀᴏᴜᴘs", url="http://t.me/PowerUltraXBot?startgroup=true")
+                       InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ɪɴ ᴍᴏʀᴇ ɢʀᴏᴜᴘs", url="http://t.me/ShanksRobot?startgroup=new")
                   ]
                 ]
             ),

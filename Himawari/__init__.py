@@ -225,7 +225,7 @@ else:
     DEL_CMDS = Config.DEL_CMDS
     GENIUS_API_TOKEN = Config.GENIUS_API_TOKEN
     # YOUTUBE_API_KEY = Config.YOUTUBE_API_KEY
-    AI_API_KEY="AWOO"
+    AI_API_KEY="SOME1HING_privet_990022"
 
     try:
         BL_CHATS = {int(x) for x in Config.BL_CHATS or []}

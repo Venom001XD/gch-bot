@@ -1,9 +1,9 @@
 import json
 import html
 import requests
-from Shikimori.modules.sql import log_channel_sql as logsql
-import Shikimori.modules.mongo.chatbot_mongo as sql
-from Shikimori.vars import AI_API_KEY as api
+from Himawari.modules.sql import log_channel_sql as logsql
+import Himawari.modules.mongo.chatbot_mongo as sql
+from Himawari.config import AI_API_KEY as api
 
 from time import sleep
 from telegram import ParseMode
@@ -11,9 +11,9 @@ from telegram import (InlineKeyboardButton,
                       InlineKeyboardMarkup, ParseMode, Update)
 from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler, Filters, MessageHandler)
 from telegram.utils.helpers import mention_html
-from Shikimori.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from Shikimori import  dispatcher
-from Shikimori.modules.log_channel import gloggable, loggable
+from Himawari.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
+from Himawari import  dispatcher
+from Himawari.modules.log_channel import gloggable, loggable
 
 bot_name = f"{dispatcher.bot.first_name}"
 
@@ -156,7 +156,7 @@ __handlers__ = [
     CHATBOT_HANDLER,
 ]
 
-__mod_name__ = "ChatBot 🤖"
+__mod_name__ = "𝙲ʜᴀᴛʙᴏᴛ"
 
 __help__ = """
 *Admins only Commands*:

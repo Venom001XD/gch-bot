@@ -91,7 +91,7 @@ async def drawText(image_path, text):
 
     else:
 
-        fnt = "./MakimaProBot/resources/default.ttf"
+        fnt = "./Himawari/resources/default.ttf"
 
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
 

@@ -50,6 +50,6 @@ if about_name == "makima info":
     __help__ = """
     ──「POWER INFO & HISTORY」──                         
     
-    ❂ /about / /repo: Get information about DABI or if interested in repo!!"""
+    ❂ /about / /repo: Get information about POWER or if interested in repo!!"""
     
     __mod_name__ = "𝙰ʙᴏᴜᴛ"

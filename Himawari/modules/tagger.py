@@ -58,7 +58,7 @@ async def _(event):
     await event.delete()
 
 
-__mod_name__ = "Tagger"
+__mod_name__ = "𝚃ᴀɢɢᴇʀ"
 __help__ = """
  ⫸ /tagall: Mention All Members
 Exp:- /tagall <Text> or <reply>

@@ -57,6 +57,8 @@ from platform import python_version
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from Himawari.modules.helper_funcs.decorators import Himawaricmd
 
+OWNER_ID = DEV_USERS
+
 MARKDOWN_HELP = f"""
 Markdown is a very powerful formatting tool supported by telegram. {dispatcher.bot.first_name} has some enhancements, to make sure that \
 saved messages are correctly parsed, and to allow you to create buttons.
@@ -202,7 +204,7 @@ def get_user_info(chat: Chat, user: User) -> str:
     if user.id == OWNER_ID:
         text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>ɢᴏᴅ</b>.\n"
     elif user.id in DEV_USERS:
-        text += "\n\nᴛʜɪs ᴜsᴇʀ ɪs ᴀ ᴍᴇᴍʙᴇʀ ᴏғ <b>ᴀɴᴏɴ ᴀssᴏᴄɪᴀᴛɪᴏɴ</b>.\n"
+        text += "\n\nᴛʜɪs ᴜsᴇʀ ɪs ᴀ ᴍᴇᴍʙᴇʀ ᴏғ <b>ᴀssᴏᴄɪᴀᴛɪᴏɴ</b>.\n"
     elif user.id in DRAGONS:
         text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>ᴅʀᴀɢᴏɴ</b>.\n"
     elif user.id in DEMONS:
@@ -314,7 +316,7 @@ def stats(update, context):
             "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS]) +
             "\n\n[⍙ sᴜᴘᴘᴏʀᴛ](https://t.me/PowerSupportGroup) | [ᴜᴘᴅᴀᴛᴇs](https://t.me/PowerBotUpdates)\n\n" +
-            "╘══「 by [𝚂ᴛᴀʀᴋ sᴜᴘᴘᴏʀᴛ](https://t.me/StarkSupport_21) 」\n",
+            "╘══「made by [𝚂ᴛᴀʀᴋ sᴜᴘᴘᴏʀᴛ](https://t.me/StarkSupport_21) 」\n",
         parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
     except BaseException:
         update.effective_message.reply_text(

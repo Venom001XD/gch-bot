@@ -131,47 +131,42 @@ def info(update: Update, context: CallbackContext):  # sourcery no-metrics
         is_chat = False
 
     if INFOPIC:
-        if is_chat:
-            try:
-                pic = user.photo.big_file_id
-                pfp = bot.get_file(pic).download(out=BytesIO())
-                pfp.seek(0)
-                message.reply_document(
-                        document=pfp,
-                        filename=f'{user.id}.jpg',
-                        caption=text,
-                        parse_mode=ParseMode.HTML,
-                )
-            except AttributeError:  # AttributeError means no chat pic so just send text
-                message.reply_text(
-                        text,
-                        parse_mode=ParseMode.HTML,
-                        disable_web_page_preview=True,
-                )
-        else:
-            try:
-                profile = bot.get_user_profile_photos(user.id).photos[0][-1]
-                _file = bot.get_file(profile["file_id"])
+        try:
+            profile = context.bot.get_user_profile_photos(user.id).photos[0][-1]
+            _file = bot.get_file(profile["file_id"])
+            _file.download(f"{user.id}.png")
 
-                _file = _file.download(out=BytesIO())
-                _file.seek(0)
+            message.reply_document(
+                document=open(f"{user.id}.png", "rb"),
+                caption=(text),
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                "ʜᴇᴀʟᴛʜ", url="https://t.me/PowerBotUpdates/13"
+                            ),
+                            InlineKeyboardButton(
+                                "ᴅɪsᴀsᴛᴇʀs", url="https://t.me/PowerBotUpdates/10"
+                            ),
+                        ],
+                    ]
+                ),
+                parse_mode=ParseMode.HTML,
+            )
 
-                message.reply_document(
-                        document=_file,
-                        caption=(text),
-                        parse_mode=ParseMode.HTML,
-                )
-
-            # Incase user don't have profile pic, send normal text
-            except IndexError:
-                message.reply_text(
-                        text, parse_mode=ParseMode.HTML, disable_web_page_preview=True
-                )
+            os.remove(f"{user.id}.png")
+        # Incase user don't have profile pic, send normal text
+        except IndexError:
+            message.reply_text(
+                text, parse_mode=ParseMode.HTML, disable_web_page_preview=True
+            )
 
     else:
         message.reply_text(
             text, parse_mode=ParseMode.HTML, disable_web_page_preview=True
         )
+
+    rep.delete()
 
 
 def get_user_info(chat: Chat, user: User) -> str:
@@ -203,26 +198,21 @@ def get_user_info(chat: Chat, user: User) -> str:
             result = bot.get_chat_member(chat.id, user.id)
             if result.custom_title:
                 text += f"\n\nThis user holds the title <b>{result.custom_title}</b> here."
-    if user.id == OWNER_ID:        
-        text += "\n\n<code>Our Cute Neko Arsh</code> :3"
-        disaster_level_present = True
+    if user.id == OWNER_ID:
+        text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>ɢᴏᴅ</b>.\n"
     elif user.id in DEV_USERS:
-        text += "\n\n<code>This user is a part of our family</code> 🌻"
-        disaster_level_present = True
-    elif user.id in SUDO_USERS:
-        text += "\n\n<code>One of our besto friendos, touch him and you are dead meat</code>"
-        disaster_level_present = True
-    elif user.id in SUPPORT_USERS:
-        text += "\n\n<code>This user is our friend</code> ✨"
-        disaster_level_present = True
+        text += "\n\nᴛʜɪs ᴜsᴇʀ ɪs ᴀ ᴍᴇᴍʙᴇʀ ᴏғ <b>ᴀɴᴏɴ ᴀssᴏᴄɪᴀᴛɪᴏɴ</b>.\n"
+    elif user.id in DRAGONS:
+        text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>ᴅʀᴀɢᴏɴ</b>.\n"
+    elif user.id in DEMONS:
+        text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>ᴅᴇᴍᴏɴ</b>.\n"
     elif user.id in TIGERS:
-        text += "\n\n<code>One of my classmates</code> :p"
-        disaster_level_present = True
-    elif user.id in WHITELIST_USERS:
-        text += "\n\n<code>Member of Himawari Tech, totally cool right?</code>"
-        disaster_level_present = True
+        text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>ᴛɪɢᴇʀ</b>.\n"
+    elif user.id in WOLVES:
+        text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>ᴡᴏʟғ</b>.\n"
+
     if disaster_level_present:
-        text += ' [<a href="https://t.me/IgniteTechUpdates/13">?</a>]'
+        text += ' [<a href="https://t.me/PowerBotUpdates/10">?</a>]'
     text += "\n"
     for mod in USER_INFO:
         if mod.__mod_name__ == "Users":
@@ -322,8 +312,8 @@ def stats(update, context):
         update.effective_message.reply_text(status +
             "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS]) +
-            "\n\n[⍙ GitHub](https://github.com/ArshCypherZ/HWBot) | [Telegram](https://t.me/Himawari_robot)\n\n" +
-            "╘══「 by [Vicious Alliance](t.me/ViciousAlliance) 」\n",
+            "\n\n[⍙ sᴜᴘᴘᴏʀᴛ](https://t.me/PowerSupportGroup) | [ᴜᴘᴅᴀᴛᴇs](https://t.me/PowerBotUpdates)\n\n" +
+            "╘══「 by [𝚂ᴛᴀʀᴋ sᴜᴘᴘᴏʀᴛ](https://t.me/StarkSupport_21) 」\n",
         parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
     except BaseException:
         update.effective_message.reply_text(
@@ -333,9 +323,9 @@ def stats(update, context):
                         "\n*Bot statistics*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                     )
-                    + "\n\n⍙ [GitHub](https://github.com/ArshCypherZ/HWBot) | [Telegram](https://t.me/Himawari_Robot)\n\n"
+                    + "\n\n⍙ [sᴜᴘᴘᴏʀᴛ](https://t.me/PowerSupportGroup) | [ᴜᴘᴅᴀᴛᴇs](https://t.me/PowerBotUpdates)\n\n"
                 )
-                + "╘══「 by [Vicious Alliance](t.me/ViciousAlliance) 」\n"
+                + "╘══「made by [𝚂ᴛᴀʀᴋ sᴜᴘᴘᴏʀᴛ](https://t.me/StarkSupport_21) 」\n"
             ),
             parse_mode=ParseMode.MARKDOWN,         
             disable_web_page_preview=True,

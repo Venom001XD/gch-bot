@@ -709,9 +709,9 @@ def main():
         try:
             dispatcher.bot.send_photo(
                 f"@{SUPPORT_CHAT}",
-                photo="https://telegra.ph/file/2e21ac3c56995777de8bb.jpg",
+                photo="https://telegra.ph/file/cf8d4c6da711cb6437213.jpg",
                 caption=f"""
-ㅤ🥀 *POWER* ɪs ᴀʟɪᴠᴇ bro...
+ㅤ🥀 *SHANKS* ɪs ᴀʟɪᴠᴇ bro...
 
 ┍──━──━──┙◆┕──━──━──┑
 ㅤ❂ **ᴘʏᴛʜᴏɴ :** `{y()}`

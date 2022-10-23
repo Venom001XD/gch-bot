@@ -54,6 +54,7 @@ from psutil import cpu_percent, virtual_memory, disk_usage, boot_time
 import datetime
 import platform
 from platform import python_version
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from Himawari.modules.helper_funcs.decorators import Himawaricmd
 
 MARKDOWN_HELP = f"""

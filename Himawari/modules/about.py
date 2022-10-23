@@ -41,7 +41,7 @@ if about_name == "makima info":
                     ],
                 ]
             ),
-            disable_web_page_preview=True              
+            disable_web_page_preview=True,              
         )
   
 

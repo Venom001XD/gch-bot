@@ -1,45 +1,28 @@
-"""
-MIT License
-
-Copyright (c) 2022 Arsh
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-"""
-
 import os
+import re 
+import cv2
 import math
+import requests
+import cloudscraper 
 import urllib.request as urllib
-import textwrap
-from PIL import Image, ImageFont, ImageDraw
+from PIL import Image
 from html import escape
+from pyrogram import filters
+from bs4 import BeautifulSoup as bs 
 from cloudscraper import CloudScraper
+from Himawari import pgram as pbot
 from bs4 import BeautifulSoup
 from urllib.parse import quote as urlquote
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
-from telegram import TelegramError, Update
+from telegram import TelegramError, Update, CallbackQuery
 from telegram.ext import CallbackContext, CallbackQueryHandler
 from telegram.utils.helpers import mention_html
 from Himawari import dispatcher
-from Himawari.modules.disable import DisableAbleCommandHandler 
-from Himawari.events import register as himawari
+from Himawari.modules.disable import DisableAbleCommandHandler
 
+# converting a gif into a sticker method
 from src.covert import convert_gif 
+
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
  
 def stickerid(update: Update, context: CallbackContext):
@@ -48,7 +31,7 @@ def stickerid(update: Update, context: CallbackContext):
         update.effective_message.reply_text(
             "Hello "
             + f"{mention_html(msg.from_user.id, msg.from_user.first_name)}"
-            + ", The sticker id you are replying is:\n<code>"
+            + ", The sticker id you are replying is :\n <code>"
             + escape(msg.reply_to_message.sticker.file_id)
             + "</code>",
             parse_mode=ParseMode.HTML,
@@ -207,7 +190,7 @@ def kang(update, context):
             sticker_emoji = "🙂"
 
         adding_process = msg.reply_text(
-            "<b>Please wait...For a Moment</b>",
+            "<b>Please wait...For a Moment   Note if you are kanging for first time please type /kang to get your sticker pack</b>",
             parse_mode=ParseMode.HTML,
         )
 
@@ -244,7 +227,7 @@ def kang(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="View Pack", url=f"t.me/addstickers/{packname}"
+                                text="•View Pack•", url=f"t.me/addstickers/{packname}"
                             )
                         ]
                     ]
@@ -290,7 +273,7 @@ def kang(update, context):
                         [
                             [
                                 InlineKeyboardButton(
-                                    text="View Pack", url=f"t.me/addstickers/{packname}"
+                                    text="•View Pack•", url=f"t.me/addstickers/{packname}"
                                 )
                             ]
                         ]
@@ -310,7 +293,7 @@ def kang(update, context):
                         [
                             [
                                 InlineKeyboardButton(
-                                    text="View Pack", url=f"t.me/addstickers/{packname}"
+                                    text="•View Pack•", url=f"t.me/addstickers/{packname}"
                                 )
                             ]
                         ]
@@ -356,7 +339,7 @@ def kang(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="View Pack", url=f"t.me/addstickers/{packname}"
+                                text="•View Pack•", url=f"t.me/addstickers/{packname}"
                             )
                         ]
                     ]
@@ -387,7 +370,7 @@ def kang(update, context):
                         [
                             [
                                 InlineKeyboardButton(
-                                    text="View Pack", url=f"t.me/addstickers/{packname}"
+                                    text="•View Pack•", url=f"t.me/addstickers/{packname}"
                                 )
                             ]
                         ]
@@ -433,7 +416,7 @@ def kang(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="View Pack", url=f"t.me/addstickers/{packname}"
+                                text="•View Pack•", url=f"t.me/addstickers/{packname}"
                             )
                         ]
                     ]
@@ -464,7 +447,7 @@ def kang(update, context):
                         [
                             [
                                 InlineKeyboardButton(
-                                    text="View Pack", url=f"t.me/addstickers/{packname}"
+                                    text="•View Pack•", url=f"t.me/addstickers/{packname}"
                                 )
                             ]
                         ]
@@ -517,7 +500,7 @@ def kang(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="View Pack", url=f"t.me/addstickers/{packname}"
+                            text="•View Pack•", url=f"t.me/addstickers/{packname}"
                         )
                     ]
                 ]
@@ -556,7 +539,7 @@ def kang(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="View Pack", url=f"t.me/addstickers/{packname}"
+                                text="•View Pack•", url=f"t.me/addstickers/{packname}"
                             )
                         ]
                     ]
@@ -579,8 +562,11 @@ def kang(update, context):
                     parse_mode=ParseMode.HTML,
                 )
             print(e)
+    
+    
+    
     else:
-        packs_text = "*Please reply to a sticker, or image to kang it!*\n"
+        packs_text = "*here are your sticker packs, add them!*\n"
         if packnum > 0:        
             firstpackname = "a" + str(user.id) + "_by_" + context.bot.username
             for i in range(0, packnum + 1):
@@ -595,7 +581,13 @@ def kang(update, context):
             [
              [
               InlineKeyboardButton(
-               text="Sticker Pack", url=f"{packs}"),
+               text="•stic pack•", url=f"{packs}"),
+             ],
+             [
+              InlineKeyboardButton(
+               text="•vid pack•", url=f"https://t.me/addstickers/video{user.id}_by_{context.bot.username}"),
+              InlineKeyboardButton(
+               text="•animated pack•", url=f"https://t.me/addstickers/animated{user.id}_by_{context.bot.username}"),
              ],
             ]
         )
@@ -630,7 +622,7 @@ def makepack_internal(
     name = user.first_name
     name = name[:50]
     keyboard = InlineKeyboardMarkup(
-        [[InlineKeyboardButton(text="View Pack", url=f"{packname}")]]
+        [[InlineKeyboardButton(text="•View Pack•", url=f"{packname}")]]
     )
     try:
         extra_version = ""
@@ -687,7 +679,7 @@ def makepack_internal(
                     [
                         [
                             InlineKeyboardButton(
-                                text="Unblock", url=f"t.me/{context.bot.username}"
+                                text="•Unblock•", url=f"t.me/{context.bot.username}"
                             )
                         ]
                     ]
@@ -770,155 +762,21 @@ def video(update: Update, context: CallbackContext):
         update.effective_message.reply_text(
             "Please reply to a gif for me to get it's video."
         )
-        
-        
-        
-@himawari(pattern="^/lammf ?(.*)")
-async def handler(event):
-    if event.fwd_from:
-        return
-    if not event.reply_to_msg_id:
-        await event.reply("Reply to an image or a sticker to memeify it Nigga!!")
-        return
-    reply_message = await event.get_reply_message()
-    if not reply_message.media:
-        await event.reply("Provide some Text please")
-        return
-    file = await bot.download_media(reply_message)
-    msg = await event.reply("Memifying this image! Please wait")
-
-    if len(text) < 1:
-        return await msg.edit("You might want to try `/mmf text`")
-    meme = await drawText(file, text)
-    await bot.send_file(event.chat_id, file=meme, force_document=False)
-    await msg.delete()
-    os.remove(meme)
-
-
-async def drawText(image_path, text):
-    img = Image.open(image_path)
-    os.remove(image_path)
-    shadowcolor = "black"
-    i_width, i_height = img.size
-    if os.name == "nt":
-        fnt = "ariel.ttf"
-    else:
-        fnt = "./Himawari/resources/ArmWrestler.ttf"
-    m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
-    if ";" in text:
-        upper_text, lower_text = text.split(";")
-    else:
-        upper_text = text
-        lower_text = ""
-    draw = ImageDraw.Draw(img)
-    current_h, pad = 10, 5
-    if upper_text:
-        for u_text in textwrap.wrap(upper_text, width=15):
-            u_width, u_height = draw.textsize(u_text, font=m_font)
-            draw.text(xy=(((i_width - u_width) / 2) - 2, int((current_h / 640)
-
-                                                             * i_width)), text=u_text, font=m_font, fill=(0, 0, 0))
-
-            draw.text(xy=(((i_width - u_width) / 2) + 2, int((current_h / 640)
-
-                                                             * i_width)), text=u_text, font=m_font, fill=(0, 0, 0))
-            draw.text(xy=((i_width - u_width) / 2,
-                          int(((current_h / 640) * i_width)) - 2),
-
-                      text=u_text,
-                      font=m_font,
-                      fill=(0,
-                            0,
-                            0))
-
-            draw.text(xy=(((i_width - u_width) / 2),
-                          int(((current_h / 640) * i_width)) + 2),
-
-                      text=u_text,
-                      font=m_font,
-                      fill=(0,
-                            0,
-                            0))
-
-
-
-            draw.text(xy=((i_width - u_width) / 2, int((current_h / 640)
-
-                                                       * i_width)), text=u_text, font=m_font, fill=(255, 255, 255))
-
-            current_h += u_height + pad
-
-    if lower_text:
-        for l_text in textwrap.wrap(lower_text, width=15):
-            u_width, u_height = draw.textsize(l_text, font=m_font)
-            draw.text(
-                xy=(
-                    ((i_width - u_width) / 2) - 2,
-                    i_height - u_height - int((20 / 640) * i_width),
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-            draw.text(
-                xy=(
-                    ((i_width - u_width) / 2) + 2,
-                    i_height - u_height - int((20 / 640) * i_width),
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-            draw.text(
-                xy=(
-                    (i_width - u_width) / 2,
-                    (i_height - u_height - int((20 / 640) * i_width)) - 2,
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-            draw.text(
-                xy=(
-                    (i_width - u_width) / 2,
-                    (i_height - u_height - int((20 / 640) * i_width)) + 2,
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-
-            draw.text(
-                xy=(
-                    (i_width - u_width) / 2,
-                    i_height - u_height - int((20 / 640) * i_width),
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(255, 255, 255),
-            )
-            current_h += u_height + pad
-    image_name = "memify.webp"
-    webp_file = os.path.join(image_name)
-    img.save(webp_file, "webp")
-    return webp_file
 
             
         
 __help__ = """
-
-• /stickerid*:* reply to a sticker to me to tell you its file ID.
-• /getsticker*:* reply to a sticker to me to upload its raw PNG file.
-• /kang*:* reply to a sticker to add it to your pack.
-• /delsticker*:* reply to a Sticker to remove it from your pack
-• /mmf*:* memefiy any sticker and image.
-• /stickers*:* Find stickers for given term on combot sticker catalogue
-• /getvidsticker*:* reply to a video sticker to me to upload it's mp4 file.
-• /getvideo*:* reply to a gif to get video easily !
-
+•  `/stickerid`*:* reply to a sticker to me to tell you its file ID.
+•  `/getsticker`*:* reply to a sticker to me to upload its raw PNG file.
+•  `/getvidsticker` *:* reply to a video sticker to me to upload it's mp4 file.
+•  `/kang`*:* reply to a sticker/video sticker/animated sticker to add it to your pack.
+•  `/delsticker`*:* Reply to your anime exist sticker to your pack to delete it.
+•  `/stickers`*:* Find stickers for given term on combot sticker catalogue 
+•  `/getvideo`*:* reply to a gif to get video easily !
+Please Use 512/512 size Sticker to kang else it will cause internal problem.
+And sometimes video sticker might not kang because of more Size than 512/512.
 """
-__mod_name__ = "𝚂ᴛɪᴄᴋᴇʀs" 
-
+__mod_name__ = "Stickers" 
 STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid, run_async=True)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker, run_async=True)
 GETVIDSTICKER_HANDLER = DisableAbleCommandHandler("getvidsticker", getvidsticker, run_async=True)

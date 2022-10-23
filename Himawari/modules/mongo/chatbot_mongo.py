@@ -27,31 +27,23 @@ from Himawari import mongodb as db_x
 himawari = db_x["CHATBOT"]
 
 
-def add_chat(chat_id):
-    hima = himawari.find_one({"chat_id": chat_id})
-    if hima:
+def is_chatbot(chat_id):
+    chatbot = chatbotdb.find_one({"chat_id": chat_id})
+    if not chatbot:
         return False
-    himawari.insert_one({"chat_id": chat_id})
-    return True
+    else:
+        return True
 
+def add_chatbot(chat_id):
+    chatbot = is_chatbot(chat_id)
+    if chatbot:
+        return
+    else:
+        return chatbotdb.insert_one({"chat_id": chat_id})
 
-def remove_chat(chat_id):
-    hima = himawari.find_one({"chat_id": chat_id})
-    if not hima:
-        return False
-    himawari.delete_one({"chat_id": chat_id})
-    return True
-
-
-def get_all_chats():
-    r = list(himawari.find())
-    if r:
-        return r
-    return False
-
-
-def get_session(chat_id):
-    hima = himawari.find_one({"chat_id": chat_id})
-    if not hima:
-        return False
-    return hima
+def rm_chatbot(chat_id):
+    chatbot = is_chatbot(chat_id)
+    if not chatbot:
+        return
+    else:
+        return chatbotdb.delete_one({"chat_id": chat_id})

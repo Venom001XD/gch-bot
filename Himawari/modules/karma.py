@@ -24,7 +24,7 @@ SOFTWARE.
 ## thanks to Moezilla (Pranav) for this awesome code
 import asyncio
 from Himawari.utils.permissions import adminsOnly
-from Himawari import pgram as app, OWNER_ID, db
+from Himawari import pgram as app, OWNER_ID, db, DEV_USERS
 from Himawari.utils.errors import capture_err
 from Himawari.modules.mongo.karma_mongo import (
     alpha_to_int,
@@ -36,8 +36,11 @@ from Himawari.modules.mongo.karma_mongo import (
     karma_on,
     update_karma,
 )
+
+
 from pyrogram import filters
 
+DEV_USERS = OWNER_ID
 
 regex_upvote = r"^((?i)\+|\+\+|\+1|thx|tnx|ty|thank you|thanx|thanks|pro|cool|good|👍|nice|noice|piro)$"
 regex_downvote = r"^(\-|\-\-|\-1|👎|noob|Noob|gross|fuck off)$"

@@ -1,38 +1,37 @@
-"""
-MIT License
 
-Copyright (c) 2022 Arsh
+import random
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+from pyrogram import __version__ as pyrover
+from telegram import __version__ as telever
+from telethon import Button
+from telethon import __version__ as tlhver
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+from MakimaProBot import OWNER_USERNAME, SUPPORT_CHAT, dispatcher as NEKO_PTB
+from MakimaProBot import telethn as tbot
+from MakimaProBot.events import register
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-"""
+PHOTO = [
+    "https://telegra.ph/file/9a5b4f0f845fe6ded1ebf.jpg",
+    "https://telegra.ph/file/594621d074ca9332e47d5.jpg",
+]
 
-from telethon import events, Button, custom
-from Himawari.events import register
-from Himawari import telethn as tbot
-HIMAWARI = "https://telegra.ph/file/9dfcdab5244a61b323210.jpg"
+
 @register(pattern=("/alive"))
 async def awake(event):
-  STB = event.sender.first_name
-  STB = "**I m Himawari** \n\n" + "**I'm Working Properly**\n\n"
-  STB += "**Python Version : 3.9.7**\n\n"
-  STB += "**python-Telegram-Bot : 13.7**\n\n"
-  BUTTON = [[Button.url("Support", "https://t.me/{SUPPORT_CHAT}"), Button.url("Updates", "https://t.me/{UPDATES_CHANNEL}")]]
-  await tbot.send_file(event.chat_id, HIMAWARI, caption=STB,  buttons=BUTTON)
+    TEXT = f"**ʜᴇʏ​ [{event.sender.first_name}](tg://user?id={event.sender.id}),\n\nɪ ᴀᴍ {NEKO_PTB.bot.first_name}**\n━━━━━━━━━━━━━━━━━━━\n\n"
+    TEXT += f"» **ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ​ : [Power](https://t.me/PowerSupportGroup)** \n\n"
+    TEXT += f"» **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{telever}` \n\n"
+    TEXT += f"» **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{tlhver}` \n\n"
+    TEXT += f"» **ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ :** `{pyrover}` \n━━━━━━━━━━━━━━━━━\n\n"
+    BUTTON = [
+        [
+            Button.url("ʜᴇʟᴘ​", f"https://t.me/{NEKO_PTB.bot.username}?start=help"),
+            Button.url("sᴜᴘᴘᴏʀᴛ​", f"https://t.me/{SUPPORT_CHAT}"),
+        ]
+    ]
+    ran = random.choice(PHOTO)
+    await tbot.send_file(event.chat_id, ran, caption=TEXT, buttons=BUTTON)
 
-  # thanks to stb the gay
+
+__mod_name__ = "Aʟɪᴠᴇ"
+

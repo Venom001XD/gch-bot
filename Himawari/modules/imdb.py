@@ -7,7 +7,7 @@ import requests
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from Himawari import pbot
+from Himawari import pgram as pbot
 
 
 @pbot.on_message(filters.command("imdb"))

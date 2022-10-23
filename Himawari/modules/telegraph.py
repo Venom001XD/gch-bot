@@ -94,7 +94,7 @@ async def _(event):
             )
             end = datetime.now()
             ms = (end - start).seconds
-            await event.reply("Pasted to [Telegraph](https://telegra.ph/{}) in {} seconds.".format(response["path"], ms), link_preview=True)
+            await event.reply("ᴘᴀsᴛᴇᴅ ᴛᴏ [ᴛᴇʟᴇɢʀᴀᴘʜ](https://telegra.ph/{}) ɪɴ {} sᴇᴄᴏɴᴅs.".format(response["path"], ms), link_preview=True)
     else:
         await event.reply("Reply to a message to get a permanent telegra.ph link.")
 
@@ -114,4 +114,4 @@ Telegraph:
 • /tgt*:* Get Telegraph Link of Replied Text 
  """
 
-__mod_name__ = "Telegraph"
+__mod_name__ = "𝚃ᴇʟᴇɢʀᴀᴘʜ"

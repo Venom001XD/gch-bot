@@ -40,8 +40,7 @@ if about_name == "makima info":
                     InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇs", url="https://t.me/PowerBotUpdates")
                     ],
                 ]
-            ),
-            disable_web_page_preview=True,              
+            ),                          
         )
   
 

@@ -773,7 +773,7 @@ def video(update: Update, context: CallbackContext):
         
         
         
-@himawari(pattern="^/mmf ?(.*)")
+@himawari(pattern="^/lammf ?(.*)")
 async def handler(event):
     if event.fwd_from:
         return

@@ -30,7 +30,9 @@ from datetime import datetime
 from telethon import types
 from telethon.tl import functions
 from Himawari.events import register
-from Himawari import TEMP_DOWNLOAD_DIRECTORY, REM_BG_API_KEY, telethn, SUPPORT_CHAT
+from Himawari import TEMP_DOWNLOAD_DIRECTORY,telethn, SUPPORT_CHAT
+
+REM_BG_API_KEY = "LSdLgCceYz8vNqFgJVzrkDgR"
 
 async def is_register_admin(chat, user):
     if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):

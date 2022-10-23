@@ -131,4 +131,4 @@ __help__ ="""
 • /reqgban: <Username/ID> will request a gban to our support staff.
 """
 
-__mod_name = "𝚁ᴇǫ-ɢʙᴀɴ"
+__mod_name__ = "𝚁ᴇǫ-ɢʙᴀɴ"

@@ -1,7 +1,7 @@
 import threading
 
 from sqlalchemy import Column, String, UnicodeText
-from KannaKamui.modules.sql import SESSION, BASE
+from Himawari.modules.sql import SESSION, BASE
 
 
 class ChatLangs(BASE):

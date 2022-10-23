@@ -6,9 +6,9 @@ from telegram import __version__ as telever
 from telethon import Button
 from telethon import __version__ as tlhver
 
-from MakimaProBot import OWNER_USERNAME, SUPPORT_CHAT, dispatcher as NEKO_PTB
-from MakimaProBot import telethn as tbot
-from MakimaProBot.events import register
+from Himawari import OWNER_USERNAME, SUPPORT_CHAT, dispatcher as NEKO_PTB
+from Himawari import telethn as tbot
+from Himawari.events import register
 
 PHOTO = [
     "https://telegra.ph/file/9a5b4f0f845fe6ded1ebf.jpg",

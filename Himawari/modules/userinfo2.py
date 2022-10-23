@@ -353,9 +353,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/ZoroUpdates/2"),
+                                "Health", url="https://t.me/PowerBotUpdates/13"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/ZoroUpdates/2")
+                                "Disaster", url="https://t.me/PowerBotUpdates/10")
                         ],
                     ]
                 ),
@@ -371,9 +371,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/ZoroUpdates/2"),
+                                "Health", url="https://t.me/PowerBotUpdates/13"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/ZoroUpdates/2")
+                                "Disaster", url="https://t.me/PowerBotUpdates/10")
                         ],
                     ]
                 ),

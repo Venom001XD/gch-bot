@@ -131,4 +131,4 @@ __help__ ="""
   ──「 BUG 」──
 
 • `/bug`*:* <bug name> will report the bug to our support staff"""
-__mod_name__ = "𝙱ɪɢ"
+__mod_name__ = "𝙱ᴜɢ"

@@ -63,7 +63,7 @@ class Config(object):
     DB_URL="postgres://wtfssbcn:8nHG5UA5keMXdDDRqlzRL8YV6cTD1GQt@peanut.db.elephantsql.com/wtfssbcn" #postgres sql database link
     REDIS_URL="redis://xelcius:Xelcius~97@redis-11612.c240.us-east-1-3.ec2.cloud.redislabs.com:11612" #redis database url from redislabs.com
     TOKEN="5626176478:AAGezbnqK2uO3Kwoun_Hevd7Et9sTIwoP7I" #bot token from @BotFather
-    DEV_USERS=[5715447071] #developers id
+    DEV_USERS=[1937701729] #developers id
     DRAGONS=[9656] #sudo users id
     DEMONS=[1909] #support user ids
     TIGERS=[1] #commas for multiple ids

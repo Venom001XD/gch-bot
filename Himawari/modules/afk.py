@@ -81,7 +81,7 @@ def no_longer_afk(update, context):
         firstname = update.effective_user.first_name
         try:
             message.reply_text(
-                "۞  {} is back online!\n\n ⏱️You were gone for {}.".format(firstname, end_afk_time))
+                "۞  {} is back online!\n\n⏱️ You were gone for {}.".format(firstname, end_afk_time))
         except Exception:
             return
 

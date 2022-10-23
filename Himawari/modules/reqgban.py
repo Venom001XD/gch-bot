@@ -8,13 +8,13 @@ from pyrogram.types import (
     Message,
 )
 
-from KannaKamui import pbot as Client
-from KannaKamui import (
+from Himawari import pbot as Client
+from Himawari import (
     OWNER_ID as owner_id,
     OWNER_USERNAME as owner_usn,
     SUPPORT_CHAT as log,
 )
-from KannaKamui.utils.errors import capture_err
+from Himawari.utils.errors import capture_err
 
 
 def content(msg: Message) -> [None, str]:
@@ -125,3 +125,10 @@ async def close_send_photo(_, CallbackQuery):
         )
     else:
         await CallbackQuery.message.delete()
+
+__help__ ="""
+──「 Gban Request 」──
+• /reqgban: <Username/ID> will request a gban to our support staff.
+"""
+
+__mod_name = "𝚁ᴇǫ-ɢʙᴀɴ"

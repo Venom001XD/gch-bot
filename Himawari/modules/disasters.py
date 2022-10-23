@@ -450,7 +450,7 @@ def removetiger(update: Update, context: CallbackContext) -> str:
 def whitelistlist(update: Update, context: CallbackContext):
     reply = "<b>IGNITE:</b>\n\n"
     m = update.effective_message.reply_text(
-        "<code>Gathering intel from IGNITE HQ...</code>", parse_mode=ParseMode.HTML,
+        "<code>Gathering intel from POWER DB...</code>", parse_mode=ParseMode.HTML,
     )
     bot = context.bot
     for each_user in WOLVES:
@@ -469,7 +469,7 @@ def whitelistlist(update: Update, context: CallbackContext):
 def tigerlist(update: Update, context: CallbackContext):
     reply = "<b>Classmates:</b>\n\n"
     m = update.effective_message.reply_text(
-        "<code>Gathering intel from IGNITE HQ...</code>", parse_mode=ParseMode.HTML,
+        "<code>Gathering intel from POWER DB...</code>", parse_mode=ParseMode.HTML,
     )
     bot = context.bot
     for each_user in TIGERS:
@@ -486,7 +486,7 @@ def tigerlist(update: Update, context: CallbackContext):
 def supportlist(update: Update, context: CallbackContext):
     bot = context.bot
     m = update.effective_message.reply_text(
-        "<code>Gathering intel from IGNITE HQ..</code>", parse_mode=ParseMode.HTML,
+        "<code>Gathering intel from POWER DB..</code>", parse_mode=ParseMode.HTML,
     )
     reply = "<b>Friends:</b>\n\n"
     for each_user in DEMONS:
@@ -503,7 +503,7 @@ def supportlist(update: Update, context: CallbackContext):
 def sudolist(update: Update, context: CallbackContext):
     bot = context.bot
     m = update.effective_message.reply_text(
-        "<code>Gathering intel from IGNITE HQ..</code>", parse_mode=ParseMode.HTML,
+        "<code>Gathering intel from POWER DB..</code>", parse_mode=ParseMode.HTML,
     )
     true_sudo = list(set(DRAGONS) - set(DEV_USERS))
     reply = "<b>Besto Friendos:</b>\n\n"
@@ -521,7 +521,7 @@ def sudolist(update: Update, context: CallbackContext):
 def devlist(update: Update, context: CallbackContext):
     bot = context.bot
     m = update.effective_message.reply_text(
-        "<code>Gathering intel from IGNITE HQ..</code>", parse_mode=ParseMode.HTML,
+        "<code>Gathering intel from POWER DB..</code>", parse_mode=ParseMode.HTML,
     )
     true_dev = list(set(DEV_USERS) - {OWNER_ID})
     reply = "<b>Family Members:</b>\n\n"

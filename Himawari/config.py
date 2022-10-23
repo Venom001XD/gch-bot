@@ -46,9 +46,9 @@ class Config(object):
     WORKERS=8
     LOAD=""
     NO_LOAD="translation"
-    MONGO_DB="Himawari"
+    MONGO_DB="Power"
     WEBHOOK=False
-    BOT_API_URL="https://api.telegram.org/bot"
+    BOT_API_URL="https://api.telegram.org/PowerUltraXBot"
 
     #you can change these 
     INFOPIC=True #picture while doing /info

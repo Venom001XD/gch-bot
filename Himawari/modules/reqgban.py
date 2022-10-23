@@ -8,7 +8,7 @@ from pyrogram.types import (
     Message,
 )
 
-from Himawari import pbot as Client
+from Himawari import pgram as Client
 from Himawari import (
     OWNER_ID as owner_id,
     OWNER_USERNAME as owner_usn,

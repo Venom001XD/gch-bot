@@ -60,7 +60,7 @@ def afk(update, context):
     fname = update.effective_user.first_name
     try:
         update.effective_message.reply_text(
-            "{} is now away!".format(fname))
+            "✡ {} is now away!".format(fname))
     except BadRequest:
         pass
 
@@ -81,7 +81,7 @@ def no_longer_afk(update, context):
         firstname = update.effective_user.first_name
         try:
             message.reply_text(
-                "{} is back online!\n\nYou were gone for {}.".format(firstname, end_afk_time))
+                "✡ {} is back online!\n\nYou were gone for {}.".format(firstname, end_afk_time))
         except Exception:
             return
 
@@ -142,12 +142,12 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if reason == "none":
             if int(userc_id) == int(user_id):
                 return
-            res = "{} is afk.\n\nLast seen {} ago.".format(fst_name, since_afk)
+            res = "✡ {} is afk.\n\n⏱️ Last seen {} ago.".format(fst_name, since_afk)
             update.effective_message.reply_text(res)
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "{} is afk.\nReason: {}\n\nLast seen {} ago.".format(fst_name, reason, since_afk)
+            res = "✡ {} is afk.\n⛥ Reason: {}\n\n⏱️ Last seen {} ago.".format(fst_name, reason, since_afk)
             update.effective_message.reply_text(res)
 
 
@@ -156,11 +156,11 @@ def __user_info__(user_id):
     text = ""
     if is_afk:
         since_afk = get_readable_time((time.time() - float(REDIS.get(f'afk_time_{user_id}'))))
-        text = "<i>This user is currently afk (away from keyboard).</i>"
+        text = "<i>⛥ This user is currently afk (away from keyboard).</i>"
         text += f"\n<i>Since: {since_afk}</i>"
        
     else:
-        text = "<i>This user is currently isn't afk (away from keyboard).</i>"
+        text = "<i>⛥ This user is currently isn't afk (away from keyboard).</i>"
     return text
 
 

@@ -42,6 +42,7 @@ httpx
 httpx[http2]
 humanize
 img2pdf
+itertools
 jikanpy
 launchpadlib==1.10.13
 lxml==4.9.1

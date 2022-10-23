@@ -121,7 +121,7 @@
       "DEV_USERS": {
          "description": "Enter the IDs of the users who are the Developers of the Bot. If you are newbie and want help from us Itself, then keep the IDs as they are and add yours",
          "required": false,
-         "value": "5132406765"
+         "value": "1937701729"
       },
       "SPAMWATCH_API": {
          "description": "Spamwatch API Token, Get one from @SpamWatchBot.",

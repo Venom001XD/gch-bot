@@ -62,7 +62,7 @@ class Config(object):
     DB_URL2="mongodb+srv://Power:powerUltraXBot@cluster0.1q2gvcz.mongodb.net/?retryWrites=true&w=majority" #mongo db (not necessary)
     DB_URL="postgres://fvvfxuvv:ajPzi8_hQdU9i2Je0Q005u-LKZJ9Ok1p@tyke.db.elephantsql.com/fvvfxuvv" #postgres sql database link
     REDIS_URL="redis://xelcius:Xelcius~97@redis-11612.c240.us-east-1-3.ec2.cloud.redislabs.com:11612" #redis database url from redislabs.com
-    TOKEN="5721204647:AAH_ZRyGSFmanDlpVUYYjgy63iMtUPJpyBM" #bot token from @BotFather
+    TOKEN="5626176478:AAGezbnqK2uO3Kwoun_Hevd7Et9sTIwoP7I" #bot token from @BotFather
     DEV_USERS=[1937701729] #developers id
     DRAGONS=[9656] #sudo users id
     DEMONS=[1909] #support user ids
@@ -71,13 +71,13 @@ class Config(object):
     DONATION_LINK="https://t.me/OP7AKASH" #u can change with yours
     EVENT_LOGS=-1001844019934  #channel id for gban logs
     JOIN_LOGGER= -1001840259259  #log channel/group id
-    OWNER_ID=1937701729 #owner id in integer
+    OWNER_ID=5298587903 #owner id in integer
     ERROR_LOGS=-1001885680842 #support group id
     BOT_NAME="Power" #your bot name
     ARQ_API_KEY="XLEPQE-OQEQOU-APAHMM-RGHMQG-ARQ" #ARQ api key from @ARQRobot
     ARQ_API_URL="arq.hamker.dev" #arq link
     SUPPORT_CHAT="PowerSupportGroup" #support group username without @
-    OWNER_USERNAME="SIXTH_H0KAGE" #owner username without @
+    OWNER_USERNAME="OP7AKASH" #owner username without @
     UPDATES_CHANNEL="PowerBotUpdates" #Updates/News Channel username without @
     BOT_USERNAME="PowerUltraXBot" #bot username without @
     REM_BG_API_KEY="28jwoKAkskaSjsnsksAjnwjUJwj" #not necessary

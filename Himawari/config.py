@@ -58,17 +58,17 @@ class Config(object):
     API_HASH="ee52339bd338181179c69f65d2260bd4" ##api hash from my.telegram.org
     APP_HASH="ee52339bd338181179c69f65d2260bd4" #same as API_HASH
     BL_CHATS=[1] #chats to be blacklisted
-    MONGO_DB_URL = "mongodb+srv://Power:powerUltraXBot@cluster0.1q2gvcz.mongodb.net/?retryWrites=true&w=majority" ##mongo database link (necessary)
+    MONGO_DB_URL = "mongodb://mongo:tKbkdOu5qnQxVkwdubub@containers-us-west-62.railway.app:7006" ##mongo database link (necessary)
     DB_URL2="mongodb+srv://Power:powerUltraXBot@cluster0.1q2gvcz.mongodb.net/?retryWrites=true&w=majority" #mongo db (not necessary)
-    DB_URL="postgres://wtfssbcn:8nHG5UA5keMXdDDRqlzRL8YV6cTD1GQt@peanut.db.elephantsql.com/wtfssbcn" #postgres sql database link
+    DB_URL="postgres://fvvfxuvv:ajPzi8_hQdU9i2Je0Q005u-LKZJ9Ok1p@tyke.db.elephantsql.com/fvvfxuvv" #postgres sql database link
     REDIS_URL="redis://xelcius:Xelcius~97@redis-11612.c240.us-east-1-3.ec2.cloud.redislabs.com:11612" #redis database url from redislabs.com
-    TOKEN="5626176478:AAGezbnqK2uO3Kwoun_Hevd7Et9sTIwoP7I" #bot token from @BotFather
+    TOKEN="5721204647:AAH_ZRyGSFmanDlpVUYYjgy63iMtUPJpyBM" #bot token from @BotFather
     DEV_USERS=[1937701729] #developers id
     DRAGONS=[9656] #sudo users id
     DEMONS=[1909] #support user ids
     TIGERS=[1] #commas for multiple ids
     WOLVES=[2112, 1212] #commas for multiple ids 
-    DONATION_LINK="https://t.me/PowerSupportGroup" #u can change with yours
+    DONATION_LINK="https://t.me/OP7AKASH" #u can change with yours
     EVENT_LOGS=-1001844019934  #channel id for gban logs
     JOIN_LOGGER= -1001840259259  #log channel/group id
     OWNER_ID=1937701729 #owner id in integer

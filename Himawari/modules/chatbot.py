@@ -149,10 +149,10 @@ def list_all_chats(update: Update, context: CallbackContext):
     update.effective_message.reply_text(text, parse_mode="HTML")
 
 __help__ = """
-Chatbot utilizes the Survey Corps Chatbot API which allows Himawari to talk and provide a more interactive group chat experience.
 *Admins only Commands*:
 • /Chatbot*:* Shows chatbot control panel
-*Powered by @StarIndustry_21 *
+*Powered by @StarIndustry_21*
+thanks to *@HSSLevii*
 """
 
 __mod_name__= "𝙲ʜᴀᴛʙᴏᴛ"

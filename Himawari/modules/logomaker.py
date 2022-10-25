@@ -15,11 +15,11 @@ import time
 from io import BytesIO
 from requests import get
 from telethon.tl.types import InputMessagesFilterPhotos
-from MakimaProBot import telethn as tbot
+from Himawari import telethn as tbot
 
-from MakimaProBot import OWNER_ID, BOT_USERNAME, SUPPORT_CHAT
-from MakimaProBot.events import register
-from MakimaProBot import telethn
+from Himawari import OWNER_ID, BOT_USERNAME, SUPPORT_CHAT
+from Himawari.events import register
+from Himawari import telethn
 from PIL import Image, ImageDraw, ImageFont
 
 

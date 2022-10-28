@@ -69,10 +69,10 @@ class Config(object):
     TIGERS=[1] #commas for multiple ids
     WOLVES=[2112, 1212] #commas for multiple ids 
     DONATION_LINK="https://t.me/OP7AKASH" #u can change with yours
-    EVENT_LOGS=-1001844019934  #channel id for gban logs
-    JOIN_LOGGER= -1001840259259  #log channel/group id
+    EVENT_LOGS=-1001628946703  #channel id for gban logs
+    JOIN_LOGGER= -1001628946703  #log channel/group id
     OWNER_ID=5298587903 #owner id in integer
-    ERROR_LOGS=-1001885680842 #support group id
+    ERROR_LOGS=-1001628946703 #support group id
     BOT_NAME="Power" #your bot name
     ARQ_API_KEY="XLEPQE-OQEQOU-APAHMM-RGHMQG-ARQ" #ARQ api key from @ARQRobot
     ARQ_API_URL="arq.hamker.dev" #arq link

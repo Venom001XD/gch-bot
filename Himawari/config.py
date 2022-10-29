@@ -62,7 +62,7 @@ class Config(object):
     DB_URL2="mongodb+srv://Power:powerUltraXBot@cluster0.1q2gvcz.mongodb.net/?retryWrites=true&w=majority" #mongo db (not necessary)
     DB_URL="postgres://fdgyqfrh:47TwHvQzYU5efrUT5uw2WMsS9mIe_WTU@lucky.db.elephantsql.com/fdgyqfrh" #postgres sql database link
     REDIS_URL="redis://xelcius:Xelcius~97@redis-11612.c240.us-east-1-3.ec2.cloud.redislabs.com:11612" #redis database url from redislabs.com
-    TOKEN="5626176478:AAGezbnqK2uO3Kwoun_Hevd7Et9sTIwoP7I" #bot token from @BotFather
+    TOKEN="5567294406:AAGHcU9FwDfmGGNBkXz7K9QpsQJNPJfbVDE" #bot token from @BotFather
     DEV_USERS=[1937701729] #developers id
     DRAGONS=[9656] #sudo users id
     DEMONS=[1909] #support user ids

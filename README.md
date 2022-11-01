@@ -69,14 +69,13 @@ $ cp config.py
 ```console
 $ python3 -m Himawari
 ```
-
+```console
+$ python3 -m Himawari
+```
 <h1>
     <p align="center">
         <a href="https://heroku.com/deploy?template=https://github.com/ArshCypherZ/HWBot">
             <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
-```console
-$ python3 -m Himawari
-```
         </a>
     </p>
 

@@ -76,4 +76,8 @@ $ python3 -m Himawari
             <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
         </a>
     </p>
+
+```console
+$ python3 -m Himawari
+```
 </h1>

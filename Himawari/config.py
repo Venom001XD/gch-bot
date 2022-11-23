@@ -61,7 +61,7 @@ class Config(object):
     MONGO_DB_URL = "mongodb://mongo:tKbkdOu5qnQxVkwdubub@containers-us-west-62.railway.app:7006" ##mongo database link (necessary)
     DB_URL2="mongodb+srv://Power:powerUltraXBot@cluster0.1q2gvcz.mongodb.net/?retryWrites=true&w=majority" #mongo db (not necessary)
     DB_URL="postgres://czexakoh:OHsNjEqHAmnyCCSq8Pq1W6RWurBIQbze@babar.db.elephantsql.com/czexakoh" #postgres sql database link
-    REDIS_URL="redis://default:boEX2SOzM4jyvQk3xY52@containers-us-west-115.railway.app:6000" #redis database url from redislabs.com
+    REDIS_URL="redis://default:V1PIFnddVQdljAw6OGSZ@containers-us-west-101.railway.app:7447" #redis database url from redislabs.com
     TOKEN="5626176478:AAGezbnqK2uO3Kwoun_Hevd7Et9sTIwoP7I" #bot token from @BotFather
     DEV_USERS=[1937701729] #developers id
     DRAGONS=[9656] #sudo users id

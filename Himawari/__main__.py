@@ -110,8 +110,8 @@ def get_readable_time(seconds: int) -> str:
 HELP_MSG = "ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs."
 START_MSG = "*Hie Onichwannnn~ UwU* I am well and alive ;)"
 
-HELP_IMG = "https://telegra.ph/file/2ee601b35a24579660a1a.jpg"
-START_IMG = "https://telegra.ph/file/1c7d99cfd32f3c89b80ce.mp4"
+HELP_IMG = "https://telegra.ph/file/37450d84dfaff9b2a44c2.jpg"
+START_IMG = "https://telegra.ph/file/37450d84dfaff9b2a44c2.jpg"
     
 PM_START_TEXT = """
 ────「 [ᴘᴏᴡᴇʀ]({}) 」────
@@ -126,11 +126,11 @@ sᴏ ᴡʜᴀᴛ ᴀʀᴇ ʏᴏᴜ ᴡᴀɪᴛɪɴɢ ғᴏʀ sᴇɴᴘᴀɪ ʀ�
 """
 
 PHOTO = (
-      "https://telegra.ph/file/54c506e4b2b28647c3928.jpg",
-      "https://telegra.ph/file/3a1be84ab63f43a6c72ac.jpg",
-      "https://telegra.ph/file/78f9f44b6c1ac1233b020.jpg",
-      "https://telegra.ph/file/d509a9f55c3e51d227aa4.jpg",
-      "https://telegra.ph/file/1a48436897f8cf9c929ac.jpg",
+      "https://telegra.ph/file/37450d84dfaff9b2a44c2.jpg",
+      "https://telegra.ph/file/37450d84dfaff9b2a44c2.jpg",
+      "https://telegra.ph/file/37450d84dfaff9b2a44c2.jpg",
+      "https://telegra.ph/file/37450d84dfaff9b2a44c2.jpg",
+      "https://telegra.ph/file/37450d84dfaff9b2a44c2.jpg",
 )
 
 
@@ -709,7 +709,7 @@ def main():
         try:
             dispatcher.bot.send_photo(
                 f"@{SUPPORT_CHAT}",
-                photo="https://telegra.ph/file/2e21ac3c56995777de8bb.jpg",
+                photo="https://telegra.ph/file/37450d84dfaff9b2a44c2.jpg",
                 caption=f"""
 ㅤ🥀 *POWER* ɪs ᴀʟɪᴠᴇ bro...
 

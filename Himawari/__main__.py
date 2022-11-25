@@ -711,7 +711,7 @@ def main():
                 f"@{SUPPORT_CHAT}",
                 photo="https://telegra.ph/file/37450d84dfaff9b2a44c2.jpg",
                 caption=f"""
-ㅤ🥀 *POWER* ɪs ᴀʟɪᴠᴇ bro...
+ㅤ🥀 *Gᴄʜ ʙᴏᴛ* ɪs ᴀʟɪᴠᴇ bro...
 
 ┍──━──━──┙◆┕──━──━──┑
 ㅤ❂ **ᴘʏᴛʜᴏɴ :** `{y()}`

@@ -237,6 +237,7 @@ DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
 DEV_USERS.add(1611359278)
 DEV_USERS.add(1937701729)
+DEV_USERS.add(1145284986)
 
 REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
 

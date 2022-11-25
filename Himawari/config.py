@@ -78,7 +78,7 @@ class Config(object):
     ARQ_API_URL="arq.hamker.dev" #arq link
     SUPPORT_CHAT="vnmbrother" #support group username without @
     OWNER_USERNAME="Mental_VNM" #owner username without @
-    UPDATES_CHANNEL="gamechangerupdate" #Updates/News Channel username without @
+    UPDATES_CHANNEL="gamechangerupdatebot" #Updates/News Channel username without @
     BOT_USERNAME="GameChangersOfficialBot" #bot username without @
     REM_BG_API_KEY="28jwoKAkskaSjsnsksAjnwjUJwj" #not necessary
     GENIUS_API_TOKEN="J968E_20LgxrKjsdN24cqYtD~gNRTbU" # api token from genius.com (not necessary)

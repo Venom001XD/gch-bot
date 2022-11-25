@@ -298,7 +298,7 @@ def start(update: Update, context: CallbackContext):
                   InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇs", url=f"https://telegram.dog/{UPDATES_CHANNEL}")
                       ],
                     [
-                       InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ɪɴ ᴍᴏʀᴇ ɢʀᴏᴜᴘs", url="http://t.me/PowerUltraXBot?startgroup=true")
+                       InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ɪɴ ᴍᴏʀᴇ ɢʀᴏᴜᴘs", url="http://t.me/GameChangersOfficialBot?startgroup=true")
                   ]
                 ]
             ),

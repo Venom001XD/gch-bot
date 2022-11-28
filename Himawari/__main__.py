@@ -285,7 +285,7 @@ def start(update: Update, context: CallbackContext):
 
     else:
         update.effective_message.reply_video(
-            START_IMG, caption= "<code>ʜᴇʜᴇ ᴀᴍ ʀᴇᴀᴅʏ ᴛᴏ ᴋɪʟʟ ᴍᴏɴsᴛᴇʀs.\nᴜᴘᴛɪᴍᴇ~</code>: <code>{}</code>".format(
+            video="https://telegra.ph/file/ed7f2cc12ce989b20e959.mp4", caption= "<code>ʜᴇʜᴇ ᴀᴍ ʀᴇᴀᴅʏ ᴛᴏ ᴋɪʟʟ ᴍᴏɴsᴛᴇʀs.\nᴜᴘᴛɪᴍᴇ~</code>: <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
